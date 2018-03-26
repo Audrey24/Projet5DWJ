@@ -1,0 +1,9 @@
+#presentation {
+  background-color: rgba(178, 178, 178, 0.5);
+  color: #e8a9f2;
+  text-align: center;
+}
+
+#presentation p {
+  margin: 0;
+}
