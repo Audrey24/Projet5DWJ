@@ -1,25 +1,40 @@
-<!--<section class="page-section about-heading">
+<section class="page-section about-heading">
       <div class="container">
-        <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="img/about.jpg" alt="">
+        <img id="imgSendForm" class="img-thumbnail about-heading-img mb-3 mb-lg-0" src="lib/images/appareilPhoto_mariage.jpg" alt="Appareil photo sur une table de fête">
         <div class="about-heading-content">
           <div class="row">
             <div class="col-xl-9 col-lg-10 mx-auto">
               <div class="bg-faded rounded p-5">
                 <h2 class="section-heading mb-4">
-                  <span class="section-heading-upper">Strong Coffee, Strong Roots</span>
-                  <span class="section-heading-lower">About Our Cafe</span>
+                  <span class="section-heading-upper">Vos souvenirs, vos photos, vos vidéos !</span>
+                  <span class="section-heading-lower">Partager les ! </span>
                 </h2>
-                <p>Founded in 1987 by the Hernandez brothers, our establishment has been serving up rich coffee sourced from artisan farmers in various regions of South and Central America. We are dedicated to travelling the world, finding the best coffee, and bringing back to you here in our cafe.</p>
-                <p class="mb-0">We guarantee that you will fall in <em>lust</em> with our decadent blends the moment you walk inside until you finish your last sip. Join us for your daily routine, an outing with friends, or simply just to enjoy some alone time.</p>
+                <div id="textMediasForm">
+                <p>Nous prenons souvent des photos pour pouvoir garder un souvenir d'un évènement qui nous a marqué ! Seulement, nous gardons nos photos ou vidéos mais ne pouvons pas toujours les partager avec les autres. Grâce à ce site, vous aller pouvoir partager tous vos souvenirs avec vos proches mais également partager les leurs.</p>
+                <p class="mb-0">Veuiller choisir le fichier que vous souhaitez partager et valider l'envoi. Il apparaitra alors dans l'Album Photo de votre évènement. Vous pouvez également rédiger une légende pour décrire votre fichier.</p>
+              </div><br />
+                <div id="sendMediasForm" class="control-group">
+                  <form class="form-group floating-label-form-group controls" method="post" enctype="multipart/form-data">
+                    <p>
+                      <div class="control-group">
+                        <label>Choisir un fichier (formats JPG, PNG ou MP4)</label><br />
+                        <label tabindex="0" for="my-file" class="input-file-trigger form-control">Parcourir</label>
+                        <input class="input-file form-control" id="my-file" type="file" accept="image/*|video/*">
+                      </div>
+                      <p class="file-return"></p><br />
+
+                      <label for="legend">Légende du fichier (facultatif) :</label><br />
+                      <input type="text" class="form-control" name="legend" id="legend" /><br />
+                      <input class="btn btn-success col-lg-4" type="submit" value="Envoyer le fichier" />
+                    </p>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>-->
+  </section>
 
 
-    <!--Présentation -->
-        <div>
-            <p>test</p>
-        </div>
+<script type="text/javascript" src="lib/js/send.js"></script>

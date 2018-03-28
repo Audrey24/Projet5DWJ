@@ -1,0 +1,36 @@
+#sendMediasForm {
+  text-align: center;
+}
+
+#textMediasForm {
+  text-align: justify;
+}
+
+#imgSendForm {
+  transform: rotate(-20deg);
+}
+/*Mise en forme du champ "Choisir un fichier"*/
+/*Désactive le input "file" pour pouvoir modifier sa mise en forme */
+.input-file {
+  display: none;
+}
+
+/*Hover sur le champ "Parcourir" */
+.js .input-file:hover, .js .input-file-trigger:hover {
+  font-weight: bold;
+}
+
+/*Paragraphe avec le fichier joint*/
+.js .file-return {
+  font-style: italic;
+  font-size: .9em;
+  font-weight: bold;
+}
+
+/*On complète l'information d'un contenu textuel
+   uniquement lorsque le paragraphe n'est pas vide */
+.js .file-return:not(:empty):before {
+  content: "Fichier joint: ";
+  font-style: normal;
+  font-weight: normal;
+}

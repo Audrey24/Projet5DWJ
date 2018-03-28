@@ -1,5 +1,37 @@
 #createContainer {
-  background-color: rgba(252, 252, 252, 0.8);
   text-align: center;
+}
 
+#sectionCreateEvent {
+  margin-top: 10rem;
+}
+
+#imgCreateEvent {
+  transform: rotate(-20deg)
+}
+
+/*Mise en forme du champ "Choisir une image"*/
+/*Désactive le input "img" pour pouvoir modifier sa mise en forme */
+.input-img {
+  display: none;
+}
+
+/*Hover sur le champ "Parcourir" */
+.js .input-img:hover, .js .input-img-trigger:hover {
+  font-weight: bold;
+}
+
+/*Paragraphe avec le fichier joint*/
+.js .img-return {
+  font-style: italic;
+  font-size: .9em;
+  font-weight: bold;
+}
+
+/*On complète l'information d'un contenu textuel
+   uniquement lorsque le paragraphe n'est pas vide */
+.js .img-return:not(:empty):before {
+  content: "Image jointe: ";
+  font-style: normal;
+  font-weight: normal;
 }
