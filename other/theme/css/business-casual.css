@@ -6,9 +6,6 @@ body {
   background-size: cover;
 }
 
-
-
-
 h1,
 h2,
 h3,
@@ -95,10 +92,10 @@ p {
     font-size: 0.9rem;
   }
   #mainNav .navbar-nav .nav-item .nav-link:hover {
-    color: rgba(232, 169, 242, 0.9);
+    color: rgba(2, 204, 228, 0.9);
   }
   #mainNav .navbar-nav .nav-item.active .nav-link:hover {
-    color: rgba(232, 169, 242, 0.9);
+    color: rgba(2, 204, 228, 0.9);
   }
 }
 
@@ -143,7 +140,7 @@ p {
 .cta {
   padding-top: 5rem;
   padding-bottom: 5rem;
-  background-color: rgba(232, 169, 242, 0.9);
+  background-color: rgba(2, 204, 228, 0.9);
 }
 
 .cta .cta-inner {
@@ -229,7 +226,7 @@ p {
 }
 
 .text-primary {
-  color: #e8a9f2 !important;
+  color: #02cce4 !important;
 }
 
 .bg-primary {

@@ -7,3 +7,9 @@
 #presentation p {
   margin: 0;
 }
+
+#imgHome {
+  width: 180px;
+  height: 150px;
+  border-radius: 150px;
+}
