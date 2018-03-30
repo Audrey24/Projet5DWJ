@@ -12,12 +12,14 @@
 
     <!-- Bootstrap core CSS -->
     <link href="other/theme/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
 
     <!-- My CSS -->
     <link href="lib/css/home.css" rel="stylesheet">
     <link href="lib/css/createEvent.css" rel="stylesheet">
     <link href="lib/css/login.css" rel="stylesheet">
     <link href="lib/css/send.css" rel="stylesheet">
+    <link href="lib/css/medias.css" rel="stylesheet">
 
 
     <!-- Custom fonts for this template -->
