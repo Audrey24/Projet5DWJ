@@ -10,8 +10,9 @@
 
     <title>Evenement</title>
 
-    <!-- Bootstrap core CSS -->
+    <!-- Bootstrap core CSS-->
     <link href="other/theme/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
 
 
     <!-- My CSS -->
