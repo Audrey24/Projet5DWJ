@@ -32,7 +32,7 @@
           </div>
         </div>
       </div>
-      
+
       <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
         <i class="fa fa-angle-left fa-2x"></i>
         <span class="sr-only">Previous</span>
