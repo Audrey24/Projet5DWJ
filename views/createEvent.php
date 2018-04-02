@@ -1,3 +1,51 @@
+<section class="page-section cta">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <div class="cta-inner text-center rounded">
+          <h2 class="section-heading mb-4">
+            <span class="section-heading-upper">Présentation </span>
+          </h2>
+
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="lib/images/titrePhoto.png" alt="Choix du titre et de la photo">
+                <div>
+                  <p>Choisissez le titre de votre évènement et la photo qui l'accompagnera.</p>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <img class="d-block w-100" src="lib/images/livreDor.png" alt="Livre d'or">
+                <div>
+                  <p>Choisissez la couleur de votre livre d'or.</p>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <img class="d-block w-100" src="lib/images/site.png" alt="Livre d'or">
+                <div>
+                  <p>Partagez vos photos et profitez de votre site.</p>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <i class="fa fa-angle-left fa-2x"></i>
+        <span class="sr-only">Previous</span>
+      </a>
+
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <i class="fa fa-angle-right fa-2x"></i>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <section id="sectionCreateEvent" class="page-section about-heading">
   <div class="container">
     <img id="imgCreateEvent" class="img-thumbnail about-heading-img mb-3 mb-lg-0" src="lib/images/createEvent.jpg" alt="Calendrier avec une date d'évènement">
@@ -44,7 +92,6 @@
                         <button type="submit" class="btn btn-success col-lg-3">Envoyer</button>
                       </div>
                     </form>
-                  </div>
                 </div>
               </div>
             </div>

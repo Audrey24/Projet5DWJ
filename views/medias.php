@@ -1,61 +1,29 @@
-<!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+<link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
 
-<!--<div class="container">
-  <div class="row">
-    <div class='list-group gallery'>
-      <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
-        <a class="thumbnail fancybox" rel="ligthbox" href="lib/images/table.jpg">
-          <img class="img-responsive" alt="" src="lib/images/table.jpg" />
-            <div class='text-right'>
-              <small class='text-muted'>Déco</small>
-            </div>
-          </a>
-        </div>
-
-        <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
-          <a class="thumbnail fancybox" rel="ligthbox" href="lib/images/mariage.jpg">
-            <img class="img-responsive" alt="" src="lib/images/mariage.jpg" />
-              <div class='text-right'>
-                <small class='text-muted'>Les mariés</small>
+<section id="sectionMedias" class="page-section about-heading">
+  <div  class="container">
+    <img id="imgCreateEvent" class="img-thumbnail about-heading-img mb-3 mb-lg-0" src="lib/images/maries.jpg" alt="Les mariés">
+    <div  class="about-heading-content">
+      <div class="row">
+        <div class="col-xl-9 col-lg-10 mx-auto">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 col-md-10 mx-auto">
+                <div  class="bg-faded rounded p-5">
+                  <h2  class="section-heading mb-4">
+                    <span class="section-heading-upper">Souvenirs de votre </span>
+                    <span class="section-heading-lower">évènement </span>
+                  </h2>
+                </div>
               </div>
-            </a>
+            </div>
           </div>
-
-          <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
-            <a class="thumbnail fancybox" rel="ligthbox" href="lib/images/mariageDanse.jpg">
-              <img class="img-responsive" alt="" src="lib/images/mariageDanse.jpg" />
-                <div class='text-right'>
-                  <small class='text-muted'></small>
-                </div>
-              </a>
-            </div>
-
-            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
-              <a class="thumbnail fancybox" rel="ligthbox" href="lib/images/enfant.jpg">
-                <img class="img-responsive" alt="" src="lib/images/enfant.jpg" />
-                  <div class='text-right'>
-                    <small class='text-muted'>les gosses</small>
-                  </div>
-                </a>
-              </div>
-
-              <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
-                <a class="thumbnail fancybox" rel="ligthbox" href="lib/images/temoin.jpg">
-                  <img class="img-responsive" alt="" src="lib/images/temoin.jpg" />
-                    <div class='text-right'>
-                      <small class='text-muted'></small>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>-->
-
-    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
-
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <div class="container gallery-container">
   <div class="tz-gallery">
