@@ -11,6 +11,6 @@ class Admin extends Controller
     //Fonction qui rend la view associé à la classe
     public function index()
     {
-        $this->view->render('admin');
+        $this->view->render('admin/admin');
     }
 }

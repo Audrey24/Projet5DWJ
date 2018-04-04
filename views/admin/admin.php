@@ -47,8 +47,10 @@
 
           </div>
         </div><br>
-        <button type="button" class="btn btn-primary col-lg-4 offset-lg-4">Inviter</button>
+        <button type="button" data-toggle="modal" data-target="#modalInvite" class="btn btn-primary col-lg-4 offset-lg-4">Inviter</button>
       </div>
     </div>
   </div>
 </section>
+
+  <?php include('modalInvite.php');?>
