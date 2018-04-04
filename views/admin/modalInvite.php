@@ -11,10 +11,10 @@
 
       <!-- Contenu de la fenêtre modale-->
       <div class="modal-body">
-        <div>
+        <form method="post" novalidate id="inviteForm">
           <p>Saisissez l'adresse mail de la personne que vous souhaitez inviter.</p>
-          <input type="text" class="form-control col-lg-12"  id="inviteMail"  name ="invitetMail" required data-validation-required-message="Entrer votre mail.">
-        </div></br>
+          <input type="text" class="form-control col-lg-12"  id="inviteMail"  name ="inviteMail" required data-validation-required-message="Entrer votre mail.">
+        </form></br>
         <button type="button" id="inviteMailSend" class="btn btn-success col-lg-4 offset-lg-4 col-sm-4 offset-sm-4">Valider</button>
         <div id="inviteMessage"></div>
       </div>

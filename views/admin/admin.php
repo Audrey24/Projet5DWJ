@@ -53,4 +53,5 @@
   </div>
 </section>
 
-  <?php include('modalInvite.php');?>
+<?php include('modalInvite.php');?>
+<script type="text/javascript" src="lib/js/modalInvite.js" defer></script>

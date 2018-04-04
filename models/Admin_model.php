@@ -7,7 +7,7 @@ class Admin_model extends Model
         parent::__construct();
     }
 
-    public function invite()
+    /*public function invite()
     {
         $mail = $_POST[''];
 
@@ -16,5 +16,5 @@ class Admin_model extends Model
         $headers .= "Reply-To: noreply@yprojetsdwjguilloux.ovh\n" ;
 
         mail($mail, "Souvenirs d'un jour, invitation à un évènement", $body, $headers);
-    }
+    }*/
 }
