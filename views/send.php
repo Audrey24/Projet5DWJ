@@ -18,8 +18,8 @@
                     <p>
                       <div class="control-group">
                         <label>Choisir un fichier (formats JPG, PNG ou MP4)</label><br />
-                        <label tabindex="0" for="my-file" class="input-file-trigger form-control">Parcourir</label>
-                        <input class="input-file form-control" id="my-file" type="file" accept="image/*|video/*">
+                        <label tabindex="0" for="my-file" class="input-file-trigger form-control" multiple>Parcourir</label>
+                        <input class="input-file form-control multi" maxlength="2" id="my-file" name"my-file" type="file" multiple accept="image/*|video/*">
                       </div>
                       <p class="file-return"></p><br />
 
@@ -37,4 +37,4 @@
   </section>
 
 
-<script type="text/javascript" src="lib/js/send.js"></script>
+<script type="text/javascript" src="lib/js/send.js" defer></script>

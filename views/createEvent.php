@@ -61,7 +61,15 @@
                       <span class="section-heading-lower">Créer le ! </span>
                     </h2>
 
-                    <form novalidate>
+                    <form id="createEventForm" novalidate>
+                      <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                          <label>Votre adresse mail</label>
+                          <input type="text" class="form-control col-lg-12"  id="createEventMail"  name ="createEventMail" required data-validation-required-message="Entrer votre mail.">
+                          <p class="help-block text-danger"></p>
+                        </div>
+                      </div>
+
                       <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
                           <label>Titre de l'évènement</label>
@@ -73,7 +81,7 @@
                       <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
                           <label>Choix de la couleur d'arrière-plan</label>
-                          <input class="form-control col-lg-2 offset-lg-5" type="color" />
+                          <input class="form-control col-lg-2 offset-lg-5 col-sm-2 offset-sm-5" type="color" />
                         </div>
                       </div>
 
@@ -86,10 +94,10 @@
                         <p class="img-return"></p><br />
                       </div><br>
 
-                      <div id="successCreateEvent"></div>
+                      <div id="messageCreateEvent"></div>
 
                       <div class="form-group">
-                        <button type="submit" class="btn btn-success col-lg-3">Envoyer</button>
+                        <button type="submit" id="createEventSend" class="btn btn-success col-lg-3">Envoyer</button>
                       </div>
                     </form>
                 </div>
@@ -101,4 +109,4 @@
     </div>
 </section>
 
-<script type="text/javascript" src="lib/js/createEvent.js"></script>
+<script type="text/javascript" src="lib/js/createEvent.js" defer></script>
