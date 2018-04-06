@@ -5,3 +5,18 @@
 #sectionComments {
   margin-top: 10rem;
 }
+
+#book {
+  background-image: url("../../lib/images/livre.jpg");
+  margin-top: 30px;
+}
+
+#bookTitle {
+  padding: 0px !important;
+  margin-bottom: 0!important;
+}
+
+#bookContainer {
+  padding: 20px !important;
+
+}

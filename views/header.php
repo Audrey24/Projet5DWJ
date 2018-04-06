@@ -23,7 +23,7 @@
     <link href="lib/css/medias.css" rel="stylesheet">
     <link href="lib/css/comments.css" rel="stylesheet">
     <link href="lib/css/contact.css" rel="stylesheet">
-      <link href="lib/css/admin.css" rel="stylesheet">
+    <link href="lib/css/admin.css" rel="stylesheet">
 
 
     <!-- Custom fonts for this template -->
@@ -77,6 +77,9 @@
             </li>
             <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="<?php echo  URL; ?>Admin">Gérer mon évènement</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="<?php echo  URL; ?>Test">Test</a>
             </li>
           </ul>
         </div>
