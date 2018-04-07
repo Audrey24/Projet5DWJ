@@ -73,7 +73,7 @@
                       <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
                           <label>Titre de l'évènement</label>
-                          <input type="text" class="form-control" placeholder="Titre" required data-validation-required-message="Entrer le titre de votre événement.">
+                          <input type="text" class="form-control" id="createEventTitle" placeholder="Titre" required data-validation-required-message="Entrer le titre de votre événement.">
                           <p class="help-block text-danger"></p>
                         </div>
                       </div>
@@ -81,15 +81,15 @@
                       <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
                           <label>Choix de la couleur d'arrière-plan</label>
-                          <input class="form-control col-lg-2 offset-lg-5 col-sm-2 offset-sm-5" type="color" />
+                          <input class="form-control col-lg-2 offset-lg-5 col-sm-2 offset-sm-5" id="createEventColor"type="color" />
                         </div>
                       </div>
 
                       <div class="control-group">
                         <div class="control-group">
                           <label>Choisir une image (formats JPG ou PNG)</label><br />
-                          <label tabindex="0" for="my-img" class="input-img-trigger form-control">Parcourir</label>
-                          <input class="input-img form-control" id="my-img" type="file" accept="image/*">
+                          <label tabindex="0" for="myImg" class="input-img-trigger form-control">Parcourir</label>
+                          <input class="input-img form-control" name="myImg" id="myImg" type="file" accept="image/*">
                         </div>
                         <p class="img-return"></p><br />
                       </div><br>

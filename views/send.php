@@ -19,9 +19,9 @@
                       <div class="control-group">
                         <label>Choisir un fichier (formats JPG, PNG ou MP4)</label><br />
                         <label tabindex="0" for="my-file" class="input-file-trigger form-control" multiple>Parcourir</label>
-                        <input class="input-file form-control" id="my-file" name"my-file" type="file" multiple accept="image/*|video/*">
-                      </div>
-                      <div class="file-return"></div><br />
+                        <input class="input-file form-control" id="my-file" name="my-file" type="file" multiple accept="image/*|video/*">
+                        <div class="gallery" />
+                      </div><br />
 
                       <label for="legend">Légende du fichier (facultatif) :</label><br />
                       <input type="text" class="form-control" name="legend" id="legend" /><br />

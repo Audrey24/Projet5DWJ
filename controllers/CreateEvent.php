@@ -13,4 +13,9 @@ class CreateEvent extends Controller
     {
         $this->view->render('createEvent');
     }
+
+    public function create()
+    {
+        $this->model->create();
+    }
 }
