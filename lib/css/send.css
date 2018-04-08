@@ -35,6 +35,27 @@
   font-weight: normal;
 }
 
+.containImg {
+  border: solid #e0dede;
+  background-color: #ededed;
+  box-shadow: 5px 10px 10px #ccc7c7;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
 .preview {
-  width: 20%;
+  width: 30%;
+}
+
+.closeImg {
+  display: block;
+  float: right;
+  color: #ccc7c7;
+  font-size: 1.5em;
+  padding-right: 10px;
+}
+
+.closeImg:hover {
+  color: #bcb7b7;
+  font-size: 1.7em;
 }

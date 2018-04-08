@@ -22,9 +22,6 @@
                         <input class="input-file form-control" id="my-file" name="my-file" type="file" multiple accept="image/*|video/*">
                         <div class="gallery" />
                       </div><br />
-
-                      <label for="legend">Légende du fichier (facultatif) :</label><br />
-                      <input type="text" class="form-control" name="legend" id="legend" /><br />
                       <input class="btn btn-success col-lg-4" type="submit" value="Envoyer le fichier" />
                     </p>
                   </form>
