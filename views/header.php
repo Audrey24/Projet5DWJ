@@ -78,9 +78,6 @@
             <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="<?php echo  URL; ?>Admin">Gérer mon évènement</a>
             </li>
-            <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="<?php echo  URL; ?>Test">Test</a>
-            </li>
           </ul>
         </div>
       </div>
