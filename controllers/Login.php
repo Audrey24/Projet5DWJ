@@ -13,4 +13,19 @@ class Login extends Controller
     {
         $this->view->render('login');
     }
+
+    public function signin()
+    {
+        $this->model->signin();
+    }
+
+    public function signup()
+    {
+        $this->model->signup();
+    }
+
+    public function disconnect()
+    {
+        $this->model->disconnect();
+    }
 }

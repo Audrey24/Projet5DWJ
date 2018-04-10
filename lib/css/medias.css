@@ -87,4 +87,8 @@ img {
 
 #sectionMedias {
   margin-top: 10rem;
+  width: 100% !important;
+  margin-right: 0;
+  margin-left: 0;
+
 }

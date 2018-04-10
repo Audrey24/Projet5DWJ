@@ -1,3 +1,5 @@
+<?php Session::init(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +26,6 @@
     <link href="lib/css/comments.css" rel="stylesheet">
     <link href="lib/css/contact.css" rel="stylesheet">
     <link href="lib/css/admin.css" rel="stylesheet">
-
 
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -63,9 +64,9 @@
             <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="<?php echo  URL; ?>Contact">Contact</a>
             </li>
-            <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="<?php echo  URL; ?>Login">Connexion</a>
-            </li>
+            <?php
+           if (!empty(Session::get('pseudo'))) {
+               ?>
             <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="<?php echo  URL; ?>Send">Envoyer</a>
             </li>
@@ -76,9 +77,46 @@
               <a class="nav-link text-uppercase text-expanded" href="<?php echo  URL; ?>Comments">Livre d'or</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="<?php echo  URL; ?>Admin">Gérer mon évènement</a>
+              <a class="nav-link text-uppercase text-expanded" href="<?php echo  URL; ?>Login/disconnect">Déconnexion</a>
             </li>
+
+            <?php
+           } else {
+               ?>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="<?php echo  URL; ?>Login">Connexion</a>
+            </li>
+            <?php
+           } ?>
+
+           <?php
+            if (!empty(Session::get('pseudo')) && (Session::get('role') == 'admin')) {
+                ?>
+                <li class="nav-item px-lg-4">
+                  <a class="nav-link text-uppercase text-expanded" href="<?php echo  URL; ?>Admin">Gérer mon évènement</a>
+                </li>
+                <?php
+            } ?>
           </ul>
         </div>
       </div>
     </nav>
+
+
+
+    <?php
+      if (!empty(Session::get('pseudo'))) {
+          ?>
+    <script>
+      var id ="<?php echo $_SESSION['id']; ?>"
+      var pseudo ="<?php echo $_SESSION['pseudo']; ?>"
+      var role ="<?php echo $_SESSION['role']; ?>"
+    </script>
+     <?php
+      } else {
+          ?>
+      <script>
+        var role ="Inconnu";
+      </script>
+    <?php
+      } ?>
