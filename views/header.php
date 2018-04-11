@@ -65,7 +65,7 @@
               <a class="nav-link text-uppercase text-expanded" href="<?php echo  URL; ?>Contact">Contact</a>
             </li>
             <?php
-           if (!empty(Session::get('pseudo'))) {
+           if (!empty(Session::get('pseudo')) && (!empty(Session::get('event')))) {
                ?>
             <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="<?php echo  URL; ?>Send">Envoyer</a>

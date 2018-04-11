@@ -88,7 +88,7 @@
                         <p class="img-return"></p><br />
                       </div><br>
 
-                      <div id="messageCreateEvent" class="col-lg-6 offset-lg-3 col-sm-6 offset-sm-3"></div>
+                      <div id="messageCreateEvent" class="col-lg-10 offset-lg-1 col-md-10 offset-md-1"></div>
 
                       <div class="form-group">
                         <button type="submit" id="createEventSend" class="btn btn-success col-lg-3">Envoyer</button>
