@@ -110,7 +110,6 @@
     <script>
       var id ="<?php echo $_SESSION['id']; ?>"
       var pseudo ="<?php echo $_SESSION['pseudo']; ?>"
-      var role ="<?php echo $_SESSION['role']; ?>"
     </script>
      <?php
       } else {

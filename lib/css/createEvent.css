@@ -43,3 +43,19 @@
 .fa.fa-angle-left {
   color: black;
 }
+
+#connexionMsg {
+  background-color: rgba(252, 252, 252, 0.8);
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#sectionLog {
+  margin-top: 10rem;
+}
+
+#Btnconnexion {
+  color: white;
+  text-decoration: none;
+}

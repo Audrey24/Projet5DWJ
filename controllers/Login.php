@@ -19,9 +19,12 @@ class Login extends Controller
         $this->model->signin();
     }
 
-    public function signup()
+    public function signup($id_event = null)
     {
-        $this->model->signup();
+        $id_user = $this->model->signup();
+        if ($id_event != null) {
+            $this->model->linkCreator($id_user);
+        }
     }
 
     public function disconnect()

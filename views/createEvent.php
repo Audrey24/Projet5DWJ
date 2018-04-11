@@ -46,6 +46,8 @@
   </div>
 </section>
 
+<?php if (!empty(Session::get('pseudo'))) {
+    ?>
 <section id="sectionCreateEvent" class="page-section about-heading">
   <div class="container">
     <img id="imgCreateEvent" class="img-thumbnail about-heading-img mb-3 mb-lg-0" src="lib/images/createEvent.jpg" alt="Calendrier avec une date d'évènement">
@@ -62,14 +64,6 @@
                     </h2>
 
                     <form id="createEventForm" action="CreateEvent/create" novalidate enctype="multipart/form-data">
-                      <div class="control-group">
-                        <div class="form-group floating-label-form-group controls">
-                          <label>Votre adresse mail</label>
-                          <input type="text" class="form-control col-lg-12"  id="createEventMail"  name ="createEventMail" required data-validation-required-message="Entrer votre mail.">
-                          <p class="help-block text-danger"></p>
-                        </div>
-                      </div>
-
                       <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
                           <label>Titre de l'évènement</label>
@@ -94,8 +88,7 @@
                         <p class="img-return"></p><br />
                       </div><br>
 
-                      <div id="messageCreateEvent"></div>
-                      <div id="mailCreateEvent"></div>
+                      <div id="messageCreateEvent" class="col-lg-6 offset-lg-3 col-sm-6 offset-sm-3"></div>
 
                       <div class="form-group">
                         <button type="submit" id="createEventSend" class="btn btn-success col-lg-3">Envoyer</button>
@@ -109,5 +102,25 @@
       </div>
     </div>
 </section>
+
+ <?php
+} else {
+        ?>
+        <section id="sectionLog" class="page-section about-heading">
+          <div class="container">
+            <div class="about-heading-content">
+              <div class="row">
+                <div class="col-xl-9 col-lg-10 mx-auto">
+                  <div id="connexionMsg">
+                    <div>Vous devez avoir un compte et être connecté pour pouvoir créer un événement!</div></br>
+                      <button class="btn btn-info col-lg-3 col-md-3"><a href="Login" id="Btnconnexion">Connexion</a></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+      <?php
+    } ?>
 
 <script type="text/javascript" src="lib/js/createEvent.js" defer></script>

@@ -17,7 +17,7 @@ class Login_model extends Model
         $pass = $_POST['signinPass'];
 
         //Comparaison des données saisies avec celles de la Bdd.
-        $req = $this->db->prepare('SELECT id, pseudo, pass, role FROM visitors WHERE pseudo = :pseudo');
+        $req = $this->db->prepare('SELECT id, pseudo, pass FROM visitors WHERE pseudo = :pseudo');
         $req->execute(array(
         'pseudo' => $pseudo));
 
@@ -28,7 +28,7 @@ class Login_model extends Model
         } elseif (password_verify($pass, $resultat['pass'])) {
             $msgs["message11"] =" Bienvenue " . $pseudo . ", bonne visite !";
             Session::init(); //sans ceci cela ne marche pas
-            Session::authenticate($resultat['role'], $pseudo, $resultat['id']);
+            Session::authenticate($pseudo, $resultat['id']);
         }
         //Retourne les msgs sous forme d'objets JSON pour pouvoir les traiter en JS.
         echo json_encode($msgs);
@@ -107,15 +107,14 @@ class Login_model extends Model
                 $this->db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
                 $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                $req = $this->db->prepare('INSERT INTO visitors (pseudo, mail, pass, role) VALUES(:pseudo, :mail, :pass, :role)');
+                $req = $this->db->prepare('INSERT INTO visitors (pseudo, mail, pass) VALUES(:pseudo, :mail, :pass)');
                 $req->execute(array(
                   'pseudo' => $pseudo,
                   'mail' => $email,
-                  'pass' => $passbrut,
-                  'role' => "visiteur"));
+                  'pass' => $passbrut));
                 $msgs["message1"] = "L'inscription est validée, bienvenue sur notre site " . $pseudo;
                 Session::init();
-                Session::authenticate('visiteur', $pseudo, $this->db->lastInsertId());
+                Session::authenticate($pseudo, $this->db->lastInsertId());
             } catch (PDOException $e) {
                 echo $e->getMessage();
             }
