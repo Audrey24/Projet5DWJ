@@ -6,6 +6,10 @@ class Admin extends Controller
     public function __construct()
     {
         parent::__construct();
+        Session::init();
+        if (Session::get('role') != 1) {
+            header('location: home');
+        }
     }
 
     //Fonction qui rend la view associé à la classe

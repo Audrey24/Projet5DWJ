@@ -65,6 +65,7 @@
               <a class="nav-link text-uppercase text-expanded" href="<?php echo  URL; ?>Contact">Contact</a>
             </li>
             <?php
+
            if (!empty(Session::get('pseudo')) && (!empty(Session::get('event')))) {
                ?>
             <li class="nav-item px-lg-4">
@@ -81,13 +82,22 @@
             </li>
 
             <?php
+           } elseif (!empty(Session::get('pseudo'))) {
+               ?>
+               <li class="nav-item px-lg-4">
+                 <a class="nav-link text-uppercase text-expanded" href="<?php echo  URL; ?>Login/disconnect">Déconnexion</a>
+               </li>
+
+            <?php
            } else {
                ?>
             <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="<?php echo  URL; ?>Login">Connexion</a>
             </li>
-            <?php
+          <?php
            } ?>
+
+
 
            <?php
             if (!empty(Session::get('pseudo')) && (Session::get('role') == 'admin')) {
