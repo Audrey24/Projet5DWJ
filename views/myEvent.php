@@ -7,7 +7,13 @@
             <span class="section-heading-lower">Vos évènements</span>
           </h2>
             <p>Veuillez choisir l'évènement que vous souhaitez ouvrir</p>
-            <div></div>
+            <div><?php $data = $this->data;
+              for ($i=0; $i<count($data); $i++) {
+                  ?>
+                  <input type="radio" name="title" value="title" id="title" /> <label for="title"> <?php echo($data[$i]['title']) ?></label><br />
+                <?php
+              }
+                ?></div>
         </div>
       </div>
     </div>
@@ -16,4 +22,3 @@
 
 
 <script type="text/javascript" src="lib/js/myEvent.js" defer></script>
-echo $this->data['title'];
