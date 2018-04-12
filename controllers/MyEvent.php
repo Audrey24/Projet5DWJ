@@ -20,4 +20,9 @@ class MyEvent extends Controller
         $this->view->addData($this->model->events());
         $this->view->render('myEvent');
     }
+
+    public function register()
+    {
+        $this->model->register();
+    }
 }

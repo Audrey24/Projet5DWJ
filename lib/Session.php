@@ -19,6 +19,7 @@ class Session
     //Si la clé est remplit, on la renvoit.
     public static function get($key)
     {
+        Session::init();
         if (isset($_SESSION[$key])) {
             return $_SESSION[$key];
         }

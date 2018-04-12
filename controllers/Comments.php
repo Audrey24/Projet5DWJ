@@ -11,6 +11,7 @@ class Comments extends Controller
     //Fonction qui rend la view associé à la classe
     public function index()
     {
+        $this->view->addData($this->model->getComments());
         $this->view->render('comments');
     }
 }

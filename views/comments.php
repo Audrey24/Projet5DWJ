@@ -12,6 +12,11 @@
           <div class="control-group">
             <table class="table table-sm">
               <tbody>
+                <?php $data = $this->data;
+                for ($i=0; $i<count($data); $i++) {
+                    echo $data[$i]['content'];
+                }
+                ?>
               </tbody>
             </table>
           </div>

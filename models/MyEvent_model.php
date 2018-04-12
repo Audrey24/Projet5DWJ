@@ -20,4 +20,11 @@ class MyEvent_model extends Model
         $res = $req->fetchAll();
         return $res;
     }
+
+    public function register()
+    {
+        if (isset($_POST['titleEvent'])) {
+            Session::set('event', $_POST['titleEvent']);
+        }
+    }
 }
