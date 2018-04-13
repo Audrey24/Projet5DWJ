@@ -81,6 +81,9 @@
             <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="<?php echo  URL; ?>Login/disconnect">Déconnexion</a>
             </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="<?php echo  URL; ?>MyEvent">Mes évènements</a>
+            </li>
 
             <?php
            } elseif (!empty(Session::get('pseudo'))) {
@@ -101,7 +104,7 @@
 
 
            <?php
-            if (!empty(Session::get('pseudo')) && (Session::get('role') == 'admin')) {
+            if (!empty(Session::get('pseudo')) && (Session::get('role') == 1)) {
                 ?>
                 <li class="nav-item px-lg-4">
                   <a class="nav-link text-uppercase text-expanded" href="<?php echo  URL; ?>Admin">Gérer mon évènement</a>
@@ -122,7 +125,7 @@
       var id ="<?php echo $_SESSION['id']; ?>"
       var pseudo ="<?php echo $_SESSION['pseudo']; ?>"
       var idevent ="<?php echo $_SESSION['event']; ?>"
-      var titleEvent ="<?php echo $_SESSION['titleEvent']; ?>"
+      var titleEvent ="<?php echo Session::get('role'); ?>"
     </script>
      <?php
       } else {

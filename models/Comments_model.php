@@ -10,7 +10,10 @@ class Comments_model extends Model
     public function getComments()
     {
         $id_event = Session::get('event');
-        $req = $this->db->prepare('SELECT id_user, content, publicationDate FROM comments WHERE id_event = :id_event');
+        $req = $this->db->prepare('SELECT visitors.pseudo, comments.id_user, comments.content, comments.publicationDate
+                                   FROM comments
+                                   INNER JOIN visitors ON comments.id_user = visitors.id
+                                   WHERE id_event = :id_event');
         $req->execute(array(
           'id_event' => $id_event
         ));

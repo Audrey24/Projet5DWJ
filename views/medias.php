@@ -3,7 +3,7 @@
 
 <section id="sectionMedias" class="page-section about-heading">
   <div  class="container">
-    <img id="imgEvent" class="img-thumbnail about-heading-img mb-3 mb-lg-0" src="eventsData/<?php echo $_SESSION['event']; ?>/backgroundImg.jpg" alt="BackgroundImg">
+    <img id="imgEvent" class="img-thumbnail about-heading-img mb-3 mb-lg-0" src="eventsData/<?php echo Session::get('event'); ?>/backgroundImg.jpg" alt="BackgroundImg">
     <div  class="about-heading-content">
       <div class="row">
         <div class="col-xl-9 col-lg-10 mx-auto">
@@ -12,7 +12,7 @@
               <div class="col-lg-8 col-md-10 mx-auto">
                 <div  class="bg-faded rounded p-5">
                   <h2  class="section-heading mb-4">
-                    <span class="section-heading-upper"><?php echo $_SESSION['titleEvent']; ?></span>
+                    <span class="section-heading-upper"><?php echo Session::get('titleEvent'); ?></span>
                   </h2>
                 </div>
               </div>

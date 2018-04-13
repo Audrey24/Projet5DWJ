@@ -11,12 +11,23 @@
           <div class="cta-inner text-center rounded" id="book">
           <div class="control-group">
             <table class="table table-sm">
+              <thead>
+                <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">First</th>
+                      <th scope="col">Last</th>
+                      <th scope="col">Handle</th>
+                    </tr>
+              </thead>
               <tbody>
                 <?php $data = $this->data;
                 for ($i=0; $i<count($data); $i++) {
-                    echo $data[$i]['content'];
+                    echo '<tr><th>'.$data[$i]['pseudo'].'</th>';
+                    echo '<th>'.$data[$i]['content'].'</th>';
+                    echo '<th>'.$data[$i]['id_user'].'</th>';
+                    echo '<th>'.$data[$i]['publicationDate'].'</th></tr>';
                 }
-                ?>
+                  ?>
               </tbody>
             </table>
           </div>
