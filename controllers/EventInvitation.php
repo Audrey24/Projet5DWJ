@@ -17,7 +17,6 @@ class EventInvitation extends Controller
     public function invite($idEvent)
     {
         $inv = $this->model->invite($idEvent);
-        print_r($inv);
         $this->view->addData($inv);
         $this->view->render('event/eventInvitation');
     }

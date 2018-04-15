@@ -142,9 +142,7 @@ class Login_model extends Model
     public function accept()
     {
         $id_event = $_POST['id'];
-        echo($id_event);
-        $user = $_POST['id_user'];
-        echo($user);
+        $user = Session::get('id');
 
         $req = $this->db->prepare('INSERT INTO attendance (id_user, id_event, role) VALUES(:id_user, :id_event, :role )');
         $req->execute(array(
