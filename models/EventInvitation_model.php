@@ -9,7 +9,7 @@ class EventInvitation_model extends Model
 
     public function invite($idEvent)
     {
-        $req = $this->db->prepare('SELECT event.title, attendance.role, visitors.pseudo
+        $req = $this->db->prepare('SELECT event.id, event.title, attendance.role, visitors.pseudo
                                    FROM event
                                    INNER JOIN attendance ON attendance.id_event = event.id
                                    INNER JOIN visitors ON attendance.id_user  = visitors.id

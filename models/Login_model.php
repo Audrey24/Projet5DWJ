@@ -138,4 +138,18 @@ class Login_model extends Model
         session_destroy();
         header('Location: ../home');
     }
+
+    public function accept()
+    {
+        $id_event = $_POST['id'];
+        echo($id_event);
+        $user = $_POST['id_user'];
+        echo($user);
+
+        $req = $this->db->prepare('INSERT INTO attendance (id_user, id_event, role) VALUES(:id_user, :id_event, :role )');
+        $req->execute(array(
+                  'id_user' => $user,
+                  'id_event' => $id_event,
+                  'role' => 2 ));
+    }
 }

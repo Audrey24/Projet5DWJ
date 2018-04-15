@@ -11,7 +11,12 @@
 <script src="<?php echo  URL; ?>other/theme/vendor/jquery/jquery.min.js"></script>
 <script src="<?php echo  URL; ?>other/theme/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<!-- My JavaScript -->
+<script type="text/javascript">
+   if(document.location.hostname == 'localhost') {
+     var url = 'http://localhost/projet_5/';
+  } else {
+      var url = 'https://projet3.projetsdwjguilloux.ovh/projet5/';
+    }</script>
 
 
 

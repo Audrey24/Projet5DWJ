@@ -13,12 +13,22 @@
             <p>Mais vous aurez également la possibilité de partager vos propres photos et vidéos ainsi qu'un message dans le Livre d'Or.</p></br>
             <p>Pour cela, vous devez seulement vous connecter à votre compte et si vous n'en avez pas encore, en créer un !</p></br>
             <p>Souvenirs d'un jour</p></br>
-            <?php require("controllers/Login.php");
-            $contr = new Login();
-            $contr->loadModel('Login');
-            $contr->indexEventInvitation();?>
+            <?php if (empty(Session::get('pseudo'))) {
+    require("controllers/Login.php");
+    $contr = new Login();
+    $contr->loadModel('Login');
+    $contr->indexEventInvitation();
+} else {
+    ?>
+          <button type="button" data-id="<?php echo $data['id']?>" data-user="<?php echo Session::get('id')?>" class=" btn btn-info col-lg-4 col-md-4 col-sm-4" id="btnacceptEvent">Je participe</button></br>
+        <?php
+}
+        ?>
+        <div id="messageAcceptInvite"></div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<script src="<?php echo URL; ?>lib/js/eventInvitation.js" defer></script>

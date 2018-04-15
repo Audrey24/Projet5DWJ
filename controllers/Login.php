@@ -36,4 +36,9 @@ class Login extends Controller
     {
         $this->model->disconnect();
     }
+
+    public function accept()
+    {
+        $this->model->accept();
+    }
 }
