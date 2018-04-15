@@ -77,3 +77,5 @@
     </div>
   </div>
 </section>
+
+<script src="<?php echo URL; ?>lib/js/login.js" defer></script>

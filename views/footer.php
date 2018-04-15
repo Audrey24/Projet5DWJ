@@ -8,11 +8,11 @@
 </footer>
 
 <!-- Bootstrap core JavaScript -->
-<script src="other/theme/vendor/jquery/jquery.min.js"></script>
-<script src="other/theme/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<?php echo  URL; ?>other/theme/vendor/jquery/jquery.min.js"></script>
+<script src="<?php echo  URL; ?>other/theme/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- My JavaScript -->
-<script src="lib/js/login.js"></script>
+
 
 
 </body>

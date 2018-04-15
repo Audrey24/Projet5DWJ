@@ -13,27 +13,27 @@
     <title>Souvenirs d'un jour</title>
 
     <!-- Bootstrap core CSS-->
-    <link href="other/theme/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo  URL; ?>other/theme/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 
 
     <!-- My CSS -->
-    <link href="lib/css/home.css" rel="stylesheet">
-    <link href="lib/css/createEvent.css" rel="stylesheet">
-    <link href="lib/css/login.css" rel="stylesheet">
-    <link href="lib/css/send.css" rel="stylesheet">
-    <link href="lib/css/medias.css" rel="stylesheet">
-    <link href="lib/css/comments.css" rel="stylesheet">
-    <link href="lib/css/contact.css" rel="stylesheet">
-    <link href="lib/css/admin.css" rel="stylesheet">
-    <link href="lib/css/myEvent.css" rel="stylesheet">
+    <link href="<?php echo  URL; ?>lib/css/home.css" rel="stylesheet">
+    <link href="<?php echo  URL; ?>lib/css/createEvent.css" rel="stylesheet">
+    <link href="<?php echo  URL; ?>lib/css/login.css" rel="stylesheet">
+    <link href="<?php echo  URL; ?>lib/css/send.css" rel="stylesheet">
+    <link href="<?php echo  URL; ?>lib/css/medias.css" rel="stylesheet">
+    <link href="<?php echo  URL; ?>lib/css/comments.css" rel="stylesheet">
+    <link href="<?php echo  URL; ?>lib/css/contact.css" rel="stylesheet">
+    <link href="<?php echo  URL; ?>lib/css/admin.css" rel="stylesheet">
+    <link href="<?php echo  URL; ?>lib/css/myEvent.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="other/theme/css/business-casual.css" rel="stylesheet">
+    <link href="<?php echo  URL; ?>other/theme/css/business-casual.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
   </head>
@@ -122,9 +122,9 @@
       if (!empty(Session::get('pseudo'))) {
           ?>
     <script>
-      var id ="<?php echo $_SESSION['id']; ?>"
-      var pseudo ="<?php echo $_SESSION['pseudo']; ?>"
-      var idevent ="<?php echo $_SESSION['event']; ?>"
+      var id ="<?php echo Session::get('id'); ?>"
+      var pseudo ="<?php echo Session::get('pseudo'); ?>"
+      var idevent ="<?php echo Session::get('event'); ?>"
       var titleEvent ="<?php echo Session::get('role'); ?>"
     </script>
      <?php

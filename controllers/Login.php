@@ -14,6 +14,11 @@ class Login extends Controller
         $this->view->render('login');
     }
 
+    public function indexEventInvitation()
+    {
+        $this->view->render('login', true);
+    }
+
     public function signin()
     {
         $this->model->signin();

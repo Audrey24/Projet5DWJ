@@ -113,7 +113,7 @@
                 <div class="col-xl-9 col-lg-10 mx-auto">
                   <div id="connexionMsg">
                     <div>Vous devez avoir un compte et être connecté pour pouvoir créer un événement!</div></br>
-                      <button class="btn btn-info col-lg-3 col-md-3"><a href="Login" id="Btnconnexion">Connexion</a></button>
+                      <button class="btn btn-info col-lg-3 col-md-3"><a href="Login" class="Btnconnexion">Connexion</a></button>
                     </div>
                   </div>
                 </div>
