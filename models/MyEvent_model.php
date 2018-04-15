@@ -31,4 +31,14 @@ class MyEvent_model extends Model
             Session::set('titleEvent', $data[2]);
         }
     }
+
+    public function delete()
+    {
+        $id = $_POST['id'];
+        echo($id);
+
+        $req = $this->db->prepare('DELETE FROM event WHERE id = :id');
+        $req->execute(array(
+             'id' => $id));
+    }
 }

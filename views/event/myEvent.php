@@ -11,11 +11,12 @@
                 <?php $data = $this->data;
                   for ($i=0; $i<count($data); $i++) {
                       ?>
-                  <input type="radio" name="titleEvent" class="titleEvent" value="<?php echo($data[$i]['id'].','.$data[$i]['role'].','.$data[$i]['title'])?>"/><label for="title"><?php echo($data[$i]['title']) ?></label><br>
+                  <i class="fa fa-times" data-toggle="modal" data-target="#modalDelete" data-id='<?php echo($data[$i]["id"])?>'></i><input type="radio" name="titleEvent" class="titleEvent" value='<?php echo($data[$i]["id"].','.$data[$i]["role"].','.$data[$i]["title"])?>'/><label for="title"><?php echo($data[$i]["title"]) ?></label><br>
 
                   <?php
                   }
                   ?>
+
 
                   <button type="submit" id="btnChoiceEvent" class="btn btn-success col-lg-3 offset-lg-5 col-md-3 offset-md-5">Choisir</button><br>
                   <div id="messageEvent"></div>
@@ -27,5 +28,7 @@
     </div>
   </div>
 </section>
+
+<?php include("modalDelete.php");?>
 
 <script type="text/javascript" src="lib/js/myEvent.js" defer></script>

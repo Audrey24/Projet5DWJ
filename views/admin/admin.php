@@ -53,5 +53,20 @@
   </div>
 </section>
 
+<div class="container" id="deleteContainer">
+  <div class="row">
+    <div class="bg-faded rounded p-5 col-lg-4 offset-lg-1">
+      <h2 class="section-heading mb-4">
+        <span class="section-heading-upper">Supprimer un évènement</span>
+      </h2>
+        <p>Attention, si vous choisissez de supprimer un évènement, vous ne pourrez plus annuler cette action !</p></br>
+        <div class="form-group">
+          <button type="submit" class="btn btn-danger col-lg-12"><a href="<?php echo  URL; ?>MyEvent" id="btnDelete">Supprimer</a></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 <?php include('modalInvite.php');?>
 <script type="text/javascript" src="lib/js/modalInvite.js" defer></script>

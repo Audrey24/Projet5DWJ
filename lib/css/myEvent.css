@@ -20,3 +20,7 @@
 #messageEvent {
   margin-top: 20px;
 }
+
+.fa.fa-times:hover {
+  color: red;
+}

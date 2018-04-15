@@ -25,4 +25,9 @@ class MyEvent extends Controller
     {
         $this->model->register();
     }
+
+    public function delete()
+    {
+        $this->model->delete();
+    }
 }
