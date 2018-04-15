@@ -22,14 +22,13 @@
 
               <?php
               $filesEvent = scandir('eventsData/'.Session::get('event'));
-              print_r($filesEvent);
               for ($i = 2; $i<count($filesEvent); $i++) {
                   if (!preg_match("#^[backgroundImg]+\.+[a-z]{2,5}+$#i", $filesEvent[$i])) {
                       echo '<div class="row">
                               <div class="col-sm-6 col-md-4">
                                 <div class="thumbnail">
                                   <a class="lightbox" href="eventsData/'.Session::get('event').'/'.$filesEvent[$i].'">
-                                  <img class="center" src=eventsData/'.Session::get('event').'/'.$filesEvent[$i].'>
+                                  <img class="center" src="eventsData/'.Session::get('event').'/'.$filesEvent[$i].'">
                                   </a>
                                   <div class="caption">
                                     <p>Les témoins</p>

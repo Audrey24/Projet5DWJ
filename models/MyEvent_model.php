@@ -40,5 +40,14 @@ class MyEvent_model extends Model
         $req = $this->db->prepare('DELETE FROM event WHERE id = :id');
         $req->execute(array(
              'id' => $id));
+
+
+        $dir = "eventsData/{$id}";
+        $filesdelete = scandir($dir);
+        for ($i=2; $i<count($filesdelete); $i++) {
+            unlink("eventsData/".$id."/".$filesdelete[$i]);
+        }
+
+        rmdir("eventsData/{$id}/");
     }
 }
