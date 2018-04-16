@@ -9,16 +9,16 @@
           </h2>
         </div>
         <div class="bg-faded rounded p-5" id="book">
-          <div class="control-group">
+          <div class="control-group" id="containComments">
             <?php $data = $this->data;
             for ($i=0; $i<count($data); $i++) {
-                $text = '<p><strong>'.$data[$i]['pseudo'].'</strong>le<em>'.$data[$i]['publicationDate'].'</em>';
+                $text = '<div id="com'.($data[$i]["id"]).'"><p><strong>'.$data[$i]['pseudo'].'</strong>'." ". 'le<em>'." ".$data[$i]['publicationDate'].'</em>';
                 if (!empty(Session::get('pseudo')) && (Session::get('role') == 1)) {
-                    $text = $text . '<th><i class="fa fa-times" data-toggle="modal" data-target="#modalDelete" data-id="'.($data[$i]["id"]).'"></i></th></tr>';
+                    $text = $text . '<i class="fa fa-times closeCross" data-toggle="modal" data-target="#modalDelete" data-id="'.($data[$i]["id"]).'"></i>';
                 }
                 $text = $text . '</p>';
                 echo $text;
-                echo('<p>'.$data[$i]['content'].'</p>');
+                echo('<p>'.$data[$i]['content'].'</p></div>');
             }
               ?>
 
@@ -61,7 +61,7 @@
 
 <table class="table table-sm">
   <thead></thead>
-  <tbody id="containComments">
+  <tbody >
     <?php $data = $this->data;
     for ($i=0; $i<count($data); $i++) {
         echo '<tr id="'.($data[$i]["id"]).'"><th>'.$data[$i]['pseudo'].'</th>';

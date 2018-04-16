@@ -31,3 +31,7 @@
 .delete:hover {
   color: red;
 }
+
+.closeCross {
+  margin-left: 50px;
+}
