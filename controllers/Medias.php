@@ -14,4 +14,9 @@ class Medias extends Controller
         $this->view->addData($this->model->getLegend());
         $this->view->render('medias');
     }
+
+    public function delete()
+    {
+        $this->model->delete();
+    }
 }

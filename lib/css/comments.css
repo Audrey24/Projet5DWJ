@@ -7,9 +7,12 @@
 }
 
 #book {
-  background-image: url("../../lib/images/livre.jpg");
+  background-image: url("../../lib/images/test.jpg");
   margin-top: 30px;
+  border: solid 0.2em rgba(255, 255, 255, 0.7);
+  text-align: center;
 }
+
 
 #bookTitle {
   padding: 0px !important;
@@ -19,4 +22,12 @@
 #bookContainer {
   padding: 20px !important;
 
+}
+
+#commentMessage {
+  margin-top: 20px;
+}
+
+.delete:hover {
+  color: red;
 }

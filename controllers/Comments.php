@@ -14,4 +14,14 @@ class Comments extends Controller
         $this->view->addData($this->model->getComments());
         $this->view->render('comments');
     }
+
+    public function comment()
+    {
+        $this->model->comment();
+    }
+
+    public function deleteComments($id)
+    {
+        $this->model->deleteComments($id);
+    }
 }

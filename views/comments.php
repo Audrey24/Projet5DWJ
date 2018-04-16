@@ -8,28 +8,21 @@
             <span class="section-heading-lower">Livre d'or</span>
           </h2>
         </div>
-          <div class="cta-inner text-center rounded" id="book">
+        <div class="bg-faded rounded p-5" id="book">
           <div class="control-group">
-            <table class="table table-sm">
-              <thead>
-                <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">First</th>
-                      <th scope="col">Last</th>
-                      <th scope="col">Handle</th>
-                    </tr>
-              </thead>
-              <tbody>
-                <?php $data = $this->data;
-                for ($i=0; $i<count($data); $i++) {
-                    echo '<tr><th>'.$data[$i]['pseudo'].'</th>';
-                    echo '<th>'.$data[$i]['content'].'</th>';
-                    echo '<th>'.$data[$i]['id_user'].'</th>';
-                    echo '<th>'.$data[$i]['publicationDate'].'</th></tr>';
+            <?php $data = $this->data;
+            for ($i=0; $i<count($data); $i++) {
+                $text = '<p><strong>'.$data[$i]['pseudo'].'</strong>le<em>'.$data[$i]['publicationDate'].'</em>';
+                if (!empty(Session::get('pseudo')) && (Session::get('role') == 1)) {
+                    $text = $text . '<th><i class="fa fa-times" data-toggle="modal" data-target="#modalDelete" data-id="'.($data[$i]["id"]).'"></i></th></tr>';
                 }
-                  ?>
-              </tbody>
-            </table>
+                $text = $text . '</p>';
+                echo $text;
+                echo('<p>'.$data[$i]['content'].'</p>');
+            }
+              ?>
+
+            <div id="tableMessage"></div>
           </div>
         </div>
       </div>
@@ -50,9 +43,10 @@
                     <h2 class="section-heading mb-5">
                       <span class="section-heading-upper">Commenter</span>
                     </h2>
-                    <textarea rows="7" class="col-lg-12" placeholder="Votre commentaire" required data-validation-required-message="Veuillez écrire un commentaire."></textarea>
+                    <textarea rows="7" class="col-lg-12" id="comments" name="comments" placeholder="Votre commentaire" required data-validation-required-message="Veuillez écrire un commentaire."></textarea>
                   </div></br>
-                  <button type="submit" class="btn btn-success">Commenter</button>
+                  <button type="submit" class="btn btn-success" id="sendComment">Commenter</button>
+                  <div id="commentMessage"></div>
                 </form>
               </div></br>
             </div>
@@ -62,3 +56,22 @@
     </div>
   </div>
 </section>
+
+<script type="text/javascript" src="lib/js/comments.js" defer></script>
+
+<table class="table table-sm">
+  <thead></thead>
+  <tbody id="containComments">
+    <?php $data = $this->data;
+    for ($i=0; $i<count($data); $i++) {
+        echo '<tr id="'.($data[$i]["id"]).'"><th>'.$data[$i]['pseudo'].'</th>';
+        echo '<th>'.$data[$i]['content'].'</th>';
+        echo '<th>'.$data[$i]['publicationDate'].'</th>';
+        if (!empty(Session::get('pseudo')) && (Session::get('role') == 1)) {
+            echo '<th><i class="fa fa-times" data-toggle="modal" data-target="#modalDelete" data-id="'.($data[$i]["id"]).'"></i></th></tr>';
+        }
+    }
+      ?>
+      <?php include("views/event/modalDelete.php");?>
+  </tbody>
+</table>

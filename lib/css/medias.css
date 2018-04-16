@@ -97,3 +97,7 @@ img {
   width: 30%;
   transform: rotate(-20deg);
 }
+
+.close {
+  margin-right: 5px;
+}

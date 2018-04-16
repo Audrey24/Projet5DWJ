@@ -25,10 +25,13 @@
               $filesEvent = scandir('eventsData/'.Session::get('event'));
               for ($i = 2; $i<count($filesEvent); $i++) {
                   if (!preg_match("#^[backgroundImg]+\.+[a-z]{2,5}+$#i", $filesEvent[$i])) {
-                      echo '<div class="row">
+                      $text = '<div class="row">
                               <div class="col-sm-6 col-md-4">
-                                <div class="thumbnail">
-                                  <a class="lightbox" href="eventsData/'.Session::get('event').'/'.$filesEvent[$i].'">
+                                <div class="thumbnail">';
+                      if (!empty(Session::get('pseudo')) && (Session::get('role') == 1)) {
+                          $text = $text . '<button type="button" data-idimg="'.$filesEvent[$i].'" class="close" data-dismiss="alert" aria-hidden="true">&times</button>';
+                      }
+                      $text = $text.'<a class="lightbox" href="eventsData/'.Session::get('event').'/'.$filesEvent[$i].'">
                                   <img class="center" src="eventsData/'.Session::get('event').'/'.$filesEvent[$i].'">
                                   </a>
                                   <div class="caption">
@@ -37,6 +40,7 @@
                                 </div>
                               </div>
                             </div>';
+                      echo($text);
                   }
               }
               ?>
