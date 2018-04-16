@@ -13,4 +13,9 @@ class Send extends Controller
     {
         $this->view->render('send');
     }
+
+    public function send()
+    {
+        $this->model->send();
+    }
 }

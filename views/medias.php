@@ -21,6 +21,7 @@
                   <div class="tz-gallery">
 
               <?php
+              $data = $this->data;
               $filesEvent = scandir('eventsData/'.Session::get('event'));
               for ($i = 2; $i<count($filesEvent); $i++) {
                   if (!preg_match("#^[backgroundImg]+\.+[a-z]{2,5}+$#i", $filesEvent[$i])) {
@@ -31,7 +32,7 @@
                                   <img class="center" src="eventsData/'.Session::get('event').'/'.$filesEvent[$i].'">
                                   </a>
                                   <div class="caption">
-                                    <p>Les témoins</p>
+                                    <p>'.$data[$i-2]['content'].'</p>
                                   </div>
                                 </div>
                               </div>

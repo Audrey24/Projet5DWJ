@@ -22,8 +22,9 @@
                         <input class="input-file form-control" id="my-file" name="my-file" type="file" multiple accept="image/*|video/*">
                         <div class="gallery" />
                       </div><br />
-                      <input class="btn btn-success col-lg-4" type="submit" value="Envoyer le fichier" />
+                      <input id='sendButton' class="btn btn-success col-lg-4" type="submit" value="Envoyer le fichier" />
                     </p>
+                    <div id="messageSend"></div>
                   </form>
                 </div>
               </div>
