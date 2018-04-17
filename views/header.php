@@ -18,7 +18,15 @@
     <style type="text/css" style="display: none">
 
     :root {
+      <?php if (!empty(Session::get('pseudo')) && (!empty(Session::get('event')))) {
+    ?>
         --main-bg-color: <?php echo Session::get('background_color'); ?>;
+      <?php
+} else {
+        ?>
+        --main-bg-color: rgba(2, 204, 228, 0.8);
+    <?php
+    } ?>
     }
     </style>
 

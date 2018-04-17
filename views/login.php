@@ -13,7 +13,7 @@
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls">
                   <label>Pseudonyme</label>
-                  <input type="text" class="form-control col-lg-6 offset-lg-3 col-md-6 offset-md-3" name="signinPseudo" id="signinPseudo" placeholder="Votre pseudo"  required data-validation-required-message="Entrer votre pseudo.">
+                  <input type="text" class="form-control col-lg-6 offset-lg-3 col-sm-6 offset-sm-3" name="signinPseudo" id="signinPseudo" placeholder="Votre pseudo"  required data-validation-required-message="Entrer votre pseudo.">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
@@ -21,7 +21,7 @@
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls">
                   <label>Mot de passe</label>
-                  <input type="password" class="form-control col-lg-6 offset-lg-3 col-md-6 offset-md-3" name="signinPass" id="signinPass" placeholder="Votre mot de passe"  required data-validation-required-message="Entrer votre mot de passe.">
+                  <input type="password" class="form-control col-lg-6 offset-lg-3 col-sm-6 offset-sm-3" name="signinPass" id="signinPass" placeholder="Votre mot de passe"  required data-validation-required-message="Entrer votre mot de passe.">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
@@ -43,7 +43,7 @@
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls">
                   <label>Pseudonyme</label>
-                  <input type="text" class="form-control col-lg-6 offset-lg-3 col-md-6 offset-md-3" name="signupPseudo" id="signupPseudo" placeholder="Votre pseudo"  required data-validation-required-message="Entrer votre pseudo.">
+                  <input type="text" class="form-control col-lg-6 offset-lg-3 col-sm-6 offset-sm-3" name="signupPseudo" id="signupPseudo" placeholder="Votre pseudo"  required data-validation-required-message="Entrer votre pseudo.">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
@@ -51,7 +51,7 @@
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls">
                   <label>Adresse mail</label>
-                  <input type="email" class="form-control col-lg-6 offset-lg-3 col-md-6 offset-md-3" name="signupMail" id="signupMail" placeholder="Adresse Mail"   required data-validation-required-message="Entrer votre adresse mail.">
+                  <input type="email" class="form-control col-lg-6 offset-lg-3 col-sm-6 offset-sm-3" name="signupMail" id="signupMail" placeholder="Adresse Mail"   required data-validation-required-message="Entrer votre adresse mail.">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
@@ -59,7 +59,7 @@
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls">
                   <label>Mot de passe</label>
-                  <input type="password" class="form-control col-lg-6 offset-lg-3 col-md-6 offset-md-3" name="signupPass" id="signupPass" placeholder="Votre mot de passe"  required data-validation-required-message="Entrer votre mot de passe.">
+                  <input type="password" class="form-control col-lg-6 offset-lg-3 col-sm-6 offset-sm-3" name="signupPass" id="signupPass" placeholder="Votre mot de passe"  required data-validation-required-message="Entrer votre mot de passe.">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>

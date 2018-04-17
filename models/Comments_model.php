@@ -10,9 +10,9 @@ class Comments_model extends Model
     public function getComments()
     {
         $id_event = Session::get('event');
-        $req = $this->db->prepare('SELECT visitors.pseudo, comments.id, comments.id_user, comments.content, DATE_FORMAT(comments.publicationDate, "%d/%m/%Y") AS publicationDate
-                                   FROM comments
-                                   INNER JOIN visitors ON comments.id_user = visitors.id
+        $req = $this->db->prepare('SELECT visitors.pseudo, comment.id, comment.id_user, comment.content, DATE_FORMAT(comment.publicationDate, "%d/%m/%Y") AS publicationDate
+                                   FROM comment
+                                   INNER JOIN visitors ON comment.id_user = visitors.id
                                    WHERE id_event = :id_event');
         $req->execute(array(
           'id_event' => $id_event
@@ -32,7 +32,7 @@ class Comments_model extends Model
 
         if (!empty($content)) {
             //On insère dans le Bdd et on ajoute l'id de l'user pour pouvoir ajouter le pseudo sur la vue.
-            $req = $this->db->prepare('INSERT INTO comments (content, id_user, id_event) VALUES(:content, :id_user, :id_event)');
+            $req = $this->db->prepare('INSERT INTO comment (content, id_user, id_event) VALUES(:content, :id_user, :id_event)');
             $req->execute(array(
             'content' => $content,
             'id_user' => $id,
@@ -42,7 +42,7 @@ class Comments_model extends Model
 
     public function deleteComments($id)
     {
-        $req = $this->db->prepare('DELETE FROM comments WHERE id = :id');
+        $req = $this->db->prepare('DELETE FROM comment WHERE id = :id');
         $req->execute(array(
       'id' => $id));
     }

@@ -31,9 +31,27 @@
 }
 
 .dropdown-menu {
-  background-color: rgba(255, 255, 255, 0.7)!important;
+  background-color: rgba(255, 255, 255, 0.8)!important;
+  border: none;
 }
 
 .cta {
   background-color: var(--main-bg-color) !important;
+}
+
+.dropdown li:hover {
+  color: rgba(2, 204, 228, 0.9) !important;
+}
+
+.dropdown-menu a:hover {
+  color: rgba(2, 204, 228, 0.9) !important;
+}
+
+#mainNav .navbar-toggler {
+  background-color: rgba(124, 79, 63, 0.8) !important;
+}
+
+.imageExplication {
+  background-color: white;
+  border-radius: 10px;
 }

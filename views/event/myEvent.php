@@ -1,4 +1,4 @@
-<section class="page-section">
+<section  class="page-section">
   <div class="container">
     <div class="about-heading-content">
       <div class="row">

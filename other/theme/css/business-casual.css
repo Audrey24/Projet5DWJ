@@ -1,6 +1,6 @@
 body {
   font-family: 'Lora';
-  background-image: url("../../../lib/images/event.jpg");
+  background-image: url("../../../lib/images/bois.jpg");
   background-attachment: fixed;
   background-position: top;
   background-size: cover;
@@ -20,7 +20,7 @@ p {
 }
 
 .text-faded {
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255);
 }
 
 .site-heading {
@@ -69,7 +69,7 @@ p {
 }
 
 #mainNav {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.8);
   font-family: 'Raleway';
   margin-bottom: 20px;
 }
@@ -87,7 +87,7 @@ p {
   color: #e6a756;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 320px) {
   #mainNav .navbar-nav .nav-item .nav-link {
     font-size: 0.9rem;
   }
@@ -220,7 +220,7 @@ p {
 }
 
 .footer {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.8);
   color: rgba(47, 23, 15, 0.9);
   margin-top: 20px;
 }
