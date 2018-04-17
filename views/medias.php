@@ -22,6 +22,9 @@
 
               <?php
               $data = $this->data;
+              $extImg = array("jpg","jpeg","gif","png");
+              $extVid = array("mp4");
+
               $filesEvent = scandir('eventsData/'.Session::get('event'));
               for ($i = 2; $i<count($filesEvent); $i++) {
                   if (!preg_match("#^[backgroundImg]+\.+[a-z]{2,5}+$#i", $filesEvent[$i])) {
@@ -31,15 +34,19 @@
                       if (!empty(Session::get('pseudo')) && (Session::get('role') == 1)) {
                           $text = $text . '<button type="button" data-idimg="'.$filesEvent[$i].'" class="close" data-dismiss="alert" aria-hidden="true">&times</button>';
                       }
-                      $text = $text.'<a class="lightbox" href="eventsData/'.Session::get('event').'/'.$filesEvent[$i].'">
-                                  <img class="center" src="eventsData/'.Session::get('event').'/'.$filesEvent[$i].'">
-                                  </a>
-                                  <div class="caption">
-                                    <p>'.$data[$i-2]['content'].'</p>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>';
+                      $text = $text.'<a class="lightbox" href="eventsData/'.Session::get('event').'/'.$filesEvent[$i].'">';
+
+                      $extCurrent = strtolower(substr(strrchr($filesEvent[$i], '.'), 1));
+                      if (in_array($extCurrent, $extImg)) {
+                          $text = $text .'<img class="center" src="eventsData/'.Session::get('event').'/'.$filesEvent[$i].'">';
+                      } elseif (in_array($extCurrent, $extVid)) {
+                          $text = $text . '<video width="400" controls><source src="eventsData/'.Session::get('event').'/'.$filesEvent[$i].'"></video>';
+                      } else {
+                          $text = $text. 'Une erreur est survenue';
+                      }
+
+                      $text = $text .'</a><div class="caption"><p>'.$data[$i-2]['content'].'</p>
+                                  </div></div></div></div>';
                       echo($text);
                   }
               }

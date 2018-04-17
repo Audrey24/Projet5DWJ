@@ -12,7 +12,7 @@ class Send_model extends Model
         #print_r($_POST);
         $id_event = Session::get('event');
         $extensions_valides = array( 'jpg' , 'jpeg' , 'gif' , 'png', 'mp4');
-
+        print_r($_FILES);
         /*$folderList = scandir('eventsData/'.$id_event);
         $nbFichier = count($folderList);
         if ($nbFichier == 3) {
