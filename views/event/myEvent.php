@@ -9,9 +9,10 @@
             </h2>
               <form id="getEventForm" action="MyEvent/register" method="post">
                 <?php $data = $this->data;
+
                   for ($i=0; $i<count($data); $i++) {
                       ?>
-                  <div id='<?php echo($data[$i]["id"])?>'><i class="fa fa-times" data-toggle="modal" data-target="#modalDelete" data-id='<?php echo($data[$i]["id"])?>'></i><input type="radio" name="titleEvent" class="titleEvent" value='<?php echo($data[$i]["id"].",".$data[$i]["role"].",".$data[$i]["title"])?>'/><label for="title"><?php echo($data[$i]["title"]) ?></label></div><br>
+                  <div id='<?php echo($data[$i]["id"])?>'><i class="fa fa-times" data-toggle="modal" data-target="#modalDelete" data-id='<?php echo($data[$i]["id"])?>'></i><input type="radio" name="titleEvent" class="titleEvent" value='<?php echo($data[$i]["id"].",".$data[$i]["role"].",".$data[$i]["title"].",".$data[$i]["background_color"])?>'/><label for="title"><?php echo($data[$i]["title"]) ?></label></div><br>
 
                   <?php
                   }

@@ -11,7 +11,7 @@ class MyEvent_model extends Model
     {
         $user = Session::get('id');
 
-        $req = $this->db->prepare('SELECT event.title, event.id, attendance.role FROM event
+        $req = $this->db->prepare('SELECT event.title, event.id, event.background_color, attendance.role FROM event
                                     INNER JOIN attendance ON event.id = attendance.id_event
                                     WHERE attendance.id_user = :iduser');
         $req->execute(array(
@@ -23,12 +23,13 @@ class MyEvent_model extends Model
 
     public function register()
     {
-        #print_r($_POST['titleEvent']);
         $data = explode(',', $_POST['titleEvent']);
+        print_r($data);
         if (isset($data[0])) {
             Session::set('event', $data[0]);
             Session::set('role', $data[1]);
             Session::set('titleEvent', $data[2]);
+            Session::set('background_color', $data[3]);
         }
     }
 

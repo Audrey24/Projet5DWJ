@@ -15,6 +15,12 @@
     <!-- Bootstrap core CSS-->
     <link href="<?php echo  URL; ?>other/theme/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+    <style type="text/css" style="display: none">
+
+    :root {
+        --main-bg-color: <?php echo Session::get('background_color'); ?>;
+    }
+    </style>
 
 
     <!-- My CSS -->
@@ -125,6 +131,7 @@
       var pseudo ="<?php echo Session::get('pseudo'); ?>"
       var idevent ="<?php echo Session::get('event'); ?>"
       var titleEvent ="<?php echo Session::get('role'); ?>"
+      var color ="<?php echo Session::get('background_color'); ?>"
     </script>
      <?php
       } else {
