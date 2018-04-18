@@ -15,6 +15,17 @@ class Admin extends Controller
     //Fonction qui rend la view associé à la classe
     public function index()
     {
+        $this->view->addData($this->model->getEventUsers());
         $this->view->render('admin/admin');
+    }
+
+    public function updateEvent()
+    {
+        $this->model->updateEvent();
+    }
+
+    public function deleteUsers($id_user)
+    {
+        $this->model->deleteUsers($id_user);
     }
 }

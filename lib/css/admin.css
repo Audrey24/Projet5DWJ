@@ -11,3 +11,13 @@
   color: white;
   text-decoration: none;
 }
+
+
+#invitContainer {
+  text-align: center;
+}
+
+.fa.fa-times {
+  position: absolute;
+  right:50px;
+}
