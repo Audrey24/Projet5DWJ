@@ -53,15 +53,16 @@ class Send_model extends Model
                 # legende pour la photo i $_POST['legs'][$i]);
                 $user = Session::get('id');
                 echo($user);
-                $content = $_POST['legs'][$i];
+                $content = $_POST[$key.'leg'];
                 $id_event = Session::get('event');
 
-                $req = $this->db->prepare('INSERT INTO legend (id, content, id_event, id_user) VALUES(:id, :content, :id_event, :id_user)');
+                $req = $this->db->prepare('INSERT INTO legend (id, content, id_event, id_user, extension) VALUES(:id, :content, :id_event, :id_user, :extension)');
                 $req->execute(array(
                     'id' => $name,
                     'content' => $content,
                     'id_event' => $id_event,
-                    'id_user' => $user));
+                    'id_user' => $user,
+                    'extension' => $extension_upload));
 
                 $num = $name;
                 echo($num);

@@ -11,7 +11,7 @@ class Medias_model extends Model
     {
         $id_event = Session::get('event');
 
-        $req = $this->db->prepare('SELECT content FROM legend WHERE id_event = :id_event');
+        $req = $this->db->prepare('SELECT id, content, extension FROM legend WHERE id_event = :id_event');
         $req->execute(array(
           'id_event' => $id_event));
 
