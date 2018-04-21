@@ -57,7 +57,7 @@
 
     <h1 class="site-heading text-center text-white d-none d-lg-block">
       <span id="title" class="site-heading-lower">Souvenirs d'un jour</span>
-      <span class="site-heading-upper text-primary mb-3">Partagez vos évènements</span>
+      <span id="subTitle" class="site-heading-upper text-primary mb-3">Partagez vos évènements</span>
     </h1>
 
     <!-- Navigation -->

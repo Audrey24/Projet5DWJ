@@ -69,7 +69,7 @@
           </h2>
         </div>
       </div>
-        <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0 imageExplication" src="lib/images/livredOr.png" alt="Page du livre d'Or">
+        <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0 imageExplication" src="lib/images/livreDor.png" alt="Page du livre d'Or">
         <div class="product-item-description d-flex ml-auto">
           <div class="bg-faded p-5 rounded">
             <p class="mb-0">Vous avez également la possiblité de laisser un message dans le Livre d'Or. N'hésitez pas !  </p>

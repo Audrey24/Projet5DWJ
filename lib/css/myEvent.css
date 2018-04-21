@@ -24,3 +24,7 @@
 .fa.fa-times:hover {
   color: red;
 }
+
+#messageNoEvent {
+  text-align: center;
+}

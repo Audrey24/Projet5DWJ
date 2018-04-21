@@ -15,7 +15,7 @@
    if(document.location.hostname == 'localhost') {
      var url = 'http://localhost/projet_5/';
   } else {
-      var url = 'http://projet3.projetsdwjguilloux.ovh/projet5/';
+      var url = 'https://projet3.projetsdwjguilloux.ovh/projet5/';
       /*var url = 'https://projet3.projetsdwjguilloux.ovh/projet5/';*/
     }</script>
 

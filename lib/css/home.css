@@ -16,7 +16,13 @@
 
 #title {
    color: white;
-   text-shadow: 2px 2px 2px grey;
+   text-shadow: 2px 6px 2px grey;
+   font-weight: 400;
+}
+
+#subTitle {
+   text-shadow: 2px 6px 2px grey;
+
 }
 
 .link {

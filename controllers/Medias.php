@@ -11,12 +11,17 @@ class Medias extends Controller
     //Fonction qui rend la view associé à la classe
     public function index()
     {
-        $this->view->addData($this->model->getLegend());
+        //$this->view->addData($this->model->getLegend());
         $this->view->render('medias');
     }
 
     public function delete()
     {
         $this->model->delete();
+    }
+
+    public function getPage($page)
+    {
+        $this->model->getPage($page);
     }
 }

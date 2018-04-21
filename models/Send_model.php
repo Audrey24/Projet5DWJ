@@ -43,7 +43,7 @@ class Send_model extends Model
                 echo "Extension correcte";
             }
             $image = file_get_contents($_FILES[$key]['tmp_name']);
-
+          
             $name = $num+1;
             $nom = "eventsData/{$id_event}/{$name}.{$extension_upload}";
             $resultat = move_uploaded_file($_FILES[$key]['tmp_name'], $nom);
