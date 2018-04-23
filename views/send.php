@@ -36,3 +36,5 @@
 
 
 <script type="text/javascript" src="lib/js/send.js" defer></script>
+
+<canvas id="canvas" style="display: none"></canvas>

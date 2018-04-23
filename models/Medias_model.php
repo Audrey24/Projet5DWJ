@@ -23,13 +23,15 @@ class Medias_model extends Model
     {
         $id = Session::get('event');
         $idImg = $_POST['idImg'];
+        $extension =  $_POST['extension'];
 
-        $filesdelete = "eventsData/{$id}/{$idImg}";
+        $filesdelete = "eventsData/{$id}/{$idImg}.{$extension}";
         unlink($filesdelete);
 
         $name = explode('.', $idImg);
         $name = $name[0];
-        echo $name;
+
+
 
         $req = $this->db->prepare('DELETE FROM legend WHERE id= :id AND id_event = :id_event');
         $req->execute(array(
@@ -59,43 +61,48 @@ class Medias_model extends Model
         $extVid = array("mp4");
 
         for ($i = 0; $i<count($data); $i++) {
-            $imagefile = "eventsData/".Session::get('event')."/".$data[$i]['id'].".".$data[$i]['extension'];
+            $imagefile = "eventsData/".Session::get('event')."/".$data[$i]['id']."min.png";
             $size = getimagesize($imagefile);
             $width = $size[0];
             $height = $size[1];
             $ratio = ($height/$width);
-
-
             if ($ratio<0.6) {
-                $text= '<div class="grid-item imgbox thumbnail">';
+                $text= '<div class="grid-item imgbox thumbnail"';
             } elseif ($ratio >= 0.6 && $ratio <= 0.8) {
-                $text= '<div class="grid-item imgbox2 thumbnail">';
+                $text= '<div class="grid-item imgbox2 thumbnail"';
             } elseif ($ratio > 0.8 && $ratio <= 1) {
-                $text= '<div class="grid-item imgbox3 thumbnail">';
+                $text= '<div class="grid-item imgbox3 thumbnail"';
             } elseif ($ratio >1 && $ratio <= 1.4) {
-                $text=  '<div class="grid-item imgbox4 thumbnail">';
+                $text=  '<div class="grid-item imgbox4 thumbnail"';
             } elseif ($ratio >1.4 && $ratio <= 1.6) {
-                $text=  '<div class="grid-item imgbox5 thumbnail">';
+                $text=  '<div class="grid-item imgbox5 thumbnail"';
             } elseif ($ratio>1.7) {
-                $text= '<div class="grid-item imgbox6 thumbnail">';
-            };
+                $text= '<div class="grid-item imgbox6 thumbnail"';
+            } else {
+                $text = '<div class="grid-item thumbnail"';
+            }
 
+            $text = $text. 'id="'.$data[$i]['id'].'" data-idimg="'.$data[$i]['id'].'" data-extension="'.$data[$i]['extension'].'">';
 
             if (!empty(Session::get('pseudo')) && (Session::get('role') == 1)) {
-                $text = $text . '<button type="button" data-idimg="'.$data[$i]['id'].'" class="close" data-dismiss="alert" aria-hidden="true">&times</button>';
+                $text = $text . '<button type="button" data-idimg="'.$data[$i]['id'].'" data-extension="'.$data[$i]['extension'].'" class="close" data-dismiss="alert" aria-hidden="true">&times</button>';
             }
-            $text = $text.'<a class="lightbox" href="eventsData/'.Session::get('event').'/'.$data[$i]["id"].'.'.$data[$i]["extension"].'">';
+            //$text = $text.'<a class="lightbox" href="eventsData/'.Session::get('event').'/'.$data[$i]["id"].'.'.$data[$i]["extension"].'">';
 
-            if (in_array($data[$i]['extension'], $extImg)) {
-                $text = $text .'<img class="center" src="eventsData/'.Session::get('event').'/'.$data[$i]["id"].'.'.$data[$i]["extension"].'">';
-            } elseif (in_array($data[$i]['extension'], $extVid)) {
-                $text = $text . '<video width="400" controls><source src="eventsData/'.Session::get('event').'/'.$data[$i]["id"].'.'.$data[$i]["extension"].'"></video>';
+            //if (in_array($data[$i]['extension'], $extImg)) {
+            $text = $text.'<img class="center openMod" src="'.$imagefile.'">';
+            //$text = $text .'<img class="center openMod" src="eventsData/'.Session::get('event').'/'.$data[$i]["id"].'.'.$data[$i]["extension"].'">';
+            /*} elseif (in_array($data[$i]['extension'], $extVid)) {
+                $text = $text . '<video width="400" class="openMod center" controls src="'.$imagefile.'"></video>';
+                //$text = $text . '<video width="400" class="openMod center" controls src="eventsData/'.Session::get('event').'/'.$data[$i]["id"].'.'.$data[$i]["extension"].'"></video>';
             } else {
                 $text = $text. 'Une erreur est survenue';
-            }
+            }*/
 
-            $text = $text .'</a><div class="caption"><p>'.$data[$i]['content'].'</p>
+            $text = $text .'<div class="caption"><p>'.$data[$i]['content'].'</p>
                             </div></div>';
+
+            $text = $text. '<div id= "msgDeleteMedias"></div>';
             echo $text;
         }
     }

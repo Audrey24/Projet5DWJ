@@ -28,4 +28,10 @@ class Admin extends Controller
     {
         $this->model->deleteUsers($id_user);
     }
+
+    public function sendInv()
+    {
+        echo('testouillr');
+        require("lib/mail/modalInvitation.php");
+    }
 }
