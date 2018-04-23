@@ -80,36 +80,33 @@
             <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="<?php echo  URL; ?>Contact">Contact</a>
             </li>
-            <?php
-
-           if (!empty(Session::get('pseudo')) && (!empty(Session::get('event')))) {
-               ?>
-
-            <div class="dropdown">
-              <li class="dropdown-toggle link linkMenu nav-item px-lg-4 nav-link text-uppercase text-expanded" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Evènements
-                <span class="caret"></span>
-              </li>
-                   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                     <li><a class="link nav-link text-uppercase text-expanded" href="<?php echo  URL; ?>Medias">Album</a></li>
-                     <li><a class="link nav-link text-uppercase text-expanded" href="<?php echo  URL; ?>Send">Envoyer</a></li>
-                     <li><a class="link nav-link text-uppercase text-expanded" href="<?php echo  URL; ?>Comments">Livre d'or</a></li>
-                     <li><a class="link nav-link text-uppercase text-expanded" href="<?php echo  URL; ?>MyEvent">Mes évènements</a></li>
-                     <li role="separator" class="divider"></li>
-                     <?php
-                      if (!empty(Session::get('pseudo')) && (Session::get('role') == 1)) {
-                          ?>
-                            <li><a class="link nav-link text-uppercase text-expanded" href="<?php echo  URL; ?>Admin">Gérer mon évènement</a></li>
-                          <?php
-                      } ?>
-                   </ul>
-              </div>
-
-              <li class="nav-item px-lg-4">
-                <a class="nav-link text-uppercase text-expanded" href="<?php echo  URL; ?>Login/disconnect">Déconnexion</a>
-              </li>
 
             <?php
-           } elseif (!empty(Session::get('pseudo'))) {
+            if (!empty(Session::get('pseudo'))) {
+                ?>
+            <ol class="nav">
+              <li>
+                <a href="#" class="link linkMenu nav-item px-lg-4 nav-link text-uppercase text-expanded">Evènement</a>
+                <ol>
+                  <li><a class="nav-link text-uppercase text-expanded link" href="<?php echo  URL; ?>Medias">Album</a></li>
+                  <li><a class="nav-link text-uppercase text-expanded link" href="<?php echo  URL; ?>Send">Envoyer</a></li>
+                  <li><a class="nav-link text-uppercase text-expanded link" href="<?php echo  URL; ?>Comments">Livre d'or</a></li>
+                  <li><a class="nav-link text-uppercase text-expanded link " href="<?php echo  URL; ?>MyEvent">Mes évènements</a></li>
+                <?php
+            } ?>
+
+                  <?php
+                   if (!empty(Session::get('pseudo')) && (Session::get('role') == 1)) {
+                       ?>
+                         <li><a class="nav-link text-uppercase text-expanded link" href="<?php echo  URL; ?>Admin">Gérer mon évènement</a></li>
+                       <?php
+                   } ?>
+                </ol>
+              </li>
+            </ol>
+
+            <?php
+           if (!empty(Session::get('pseudo'))) {
                ?>
                <li class="nav-item px-lg-4">
                  <a class="nav-link text-uppercase text-expanded" href="<?php echo  URL; ?>Login/disconnect">Déconnexion</a>

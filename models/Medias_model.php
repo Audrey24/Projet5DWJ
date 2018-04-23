@@ -23,15 +23,20 @@ class Medias_model extends Model
     {
         $id = Session::get('event');
         $idImg = $_POST['idImg'];
-        $extension =  $_POST['extension'];
 
+        $req = $this->db->prepare('SELECT extension FROM legend WHERE id = :id');
+        $req->execute(array(
+          'id' => $idImg));
+        $res = $req->fetch();
+        $extension = $res[0];
+        
         $filesdelete = "eventsData/{$id}/{$idImg}.{$extension}";
+        $mindelete = "eventsData/{$id}/{$idImg}min.png";
         unlink($filesdelete);
+        unlink($mindelete);
 
         $name = explode('.', $idImg);
         $name = $name[0];
-
-
 
         $req = $this->db->prepare('DELETE FROM legend WHERE id= :id AND id_event = :id_event');
         $req->execute(array(
@@ -85,7 +90,7 @@ class Medias_model extends Model
             $text = $text. 'id="'.$data[$i]['id'].'" data-idimg="'.$data[$i]['id'].'" data-extension="'.$data[$i]['extension'].'">';
 
             if (!empty(Session::get('pseudo')) && (Session::get('role') == 1)) {
-                $text = $text . '<button type="button" data-idimg="'.$data[$i]['id'].'" data-extension="'.$data[$i]['extension'].'" class="close" data-dismiss="alert" aria-hidden="true">&times</button>';
+                $text = $text . '<button type="button" data-idimg="'.$data[$i]['id'].'" data-extension="'.$data[$i]['extension'].'" class="close deleteMod" data-dismiss="alert" aria-hidden="true">&times</button>';
             }
             //$text = $text.'<a class="lightbox" href="eventsData/'.Session::get('event').'/'.$data[$i]["id"].'.'.$data[$i]["extension"].'">';
 
@@ -102,7 +107,7 @@ class Medias_model extends Model
             $text = $text .'<div class="caption"><p>'.$data[$i]['content'].'</p>
                             </div></div>';
 
-            $text = $text. '<div id= "msgDeleteMedias"></div>';
+            $text = $text. '<div id="msgDeleteMedias"></div>';
             echo $text;
         }
     }

@@ -17,6 +17,7 @@
 </section>
 
 <?php include("views/modalImage.php");?>
+<?php include("views/event/modalDelete.php");?>
 
 
 <script src="lib/js/medias.js" defer></script>
