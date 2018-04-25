@@ -64,6 +64,13 @@
                 </div>
               </div>
 
+              <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                  <input type="checkbox" name="droitAuteur" id="droitAuteur"/>  <label>J'accepte les <a href="Login/CGU">conditions d'utilisation<a> et les dispositions relatives au droit d'auteur.</label>
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+
               <div id="successSignup" class="col-lg-6 offset-lg-3 col-sm-6 offset-sm-3"></div></br>
 
               <div>

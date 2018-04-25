@@ -40,7 +40,13 @@ class Login_model extends Model
     {
         $error = 0;
         $msgs[] = array();
-        //On vérifie si le champs est rempli et la validité du pseudo. Si pb, on retourne un msg d'erreur.
+
+        //$droit = $_POST['droitAuteur'];
+        $non_droit = empty($_POST['droitAuteur']);
+        if ($non_droit) {
+            $msgs["message8"] ="Vous devez accepter les conditions";
+            $error = 1;
+        }
         $pseudo = $_POST['signupPseudo'];
         //Convertit les caractères spéciaux en entités HTML.
         $pseudo = htmlspecialchars($pseudo);

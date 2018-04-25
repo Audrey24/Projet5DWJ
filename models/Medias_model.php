@@ -29,7 +29,7 @@ class Medias_model extends Model
           'id' => $idImg));
         $res = $req->fetch();
         $extension = $res[0];
-        
+
         $filesdelete = "eventsData/{$id}/{$idImg}.{$extension}";
         $mindelete = "eventsData/{$id}/{$idImg}min.png";
         unlink($filesdelete);
@@ -46,7 +46,6 @@ class Medias_model extends Model
 
     public function getPage($page)
     {
-        # 10 par page
         $nb = 10;
 
         $index_deb = ($page * $nb) + 1;
@@ -92,17 +91,8 @@ class Medias_model extends Model
             if (!empty(Session::get('pseudo')) && (Session::get('role') == 1)) {
                 $text = $text . '<button type="button" data-idimg="'.$data[$i]['id'].'" data-extension="'.$data[$i]['extension'].'" class="close deleteMod" data-dismiss="alert" aria-hidden="true">&times</button>';
             }
-            //$text = $text.'<a class="lightbox" href="eventsData/'.Session::get('event').'/'.$data[$i]["id"].'.'.$data[$i]["extension"].'">';
 
-            //if (in_array($data[$i]['extension'], $extImg)) {
             $text = $text.'<img class="center openMod" src="'.$imagefile.'">';
-            //$text = $text .'<img class="center openMod" src="eventsData/'.Session::get('event').'/'.$data[$i]["id"].'.'.$data[$i]["extension"].'">';
-            /*} elseif (in_array($data[$i]['extension'], $extVid)) {
-                $text = $text . '<video width="400" class="openMod center" controls src="'.$imagefile.'"></video>';
-                //$text = $text . '<video width="400" class="openMod center" controls src="eventsData/'.Session::get('event').'/'.$data[$i]["id"].'.'.$data[$i]["extension"].'"></video>';
-            } else {
-                $text = $text. 'Une erreur est survenue';
-            }*/
 
             $text = $text .'<div class="caption"><p>'.$data[$i]['content'].'</p>
                             </div></div>';

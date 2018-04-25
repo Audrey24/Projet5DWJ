@@ -41,4 +41,9 @@ class Login extends Controller
     {
         $this->model->accept();
     }
+
+    public function CGU()
+    {
+        $this->view->render('mentions');
+    }
 }

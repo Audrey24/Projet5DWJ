@@ -17,7 +17,7 @@
           <div class="control-group">
             <div class="form-group floating-label-form-group controls">
               <label>Choix de la couleur d'arrière-plan</label>
-              <input class="form-control col-lg-2 offset-lg-5" id="newColor" name="newColor" type="color" />
+              <input class="form-control col-lg-4 offset-lg-4 col-sm-4 offset-sm-4" id="newColor" name="newColor" type="color" />
             </div>
           </div>
 
