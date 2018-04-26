@@ -58,20 +58,6 @@
 </section>
 
 <script type="text/javascript" src="lib/js/comments.js" defer></script>
-
-<table class="table table-sm">
-  <thead></thead>
-  <tbody >
-    <?php $data = $this->data;
-    for ($i=0; $i<count($data); $i++) {
-        echo '<tr id="'.($data[$i]["id"]).'"><th>'.$data[$i]['pseudo'].'</th>';
-        echo '<th>'.$data[$i]['content'].'</th>';
-        echo '<th>'.$data[$i]['publicationDate'].'</th>';
-        if (!empty(Session::get('pseudo')) && (Session::get('role') == 1)) {
-            echo '<th><i class="fa fa-times" data-toggle="modal" data-target="#modalDelete" data-id="'.($data[$i]["id"]).'"></i></th></tr>';
-        }
-    }
-      ?>
-      <?php include("views/event/modalDelete.php");?>
+<?php include("views/event/modalDelete.php");?>
   </tbody>
 </table>

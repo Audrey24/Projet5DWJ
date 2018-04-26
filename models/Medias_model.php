@@ -92,8 +92,11 @@ class Medias_model extends Model
                 $text = $text . '<button type="button" data-idimg="'.$data[$i]['id'].'" data-extension="'.$data[$i]['extension'].'" class="close deleteMod" data-dismiss="alert" aria-hidden="true">&times</button>';
             }
 
-            $text = $text.'<img class="center openMod" src="'.$imagefile.'">';
-
+            if ($data[$i]['extension'] !="mp4") {
+                $text = $text.'<i class="fa fa-camera-retro"></i><img class="center openMod" src="'.$imagefile.'">';
+            } else {
+                $text = $text.'<i class="fa fa-film"></i><img class="center openMod" src="'.$imagefile.'">';
+            }
             $text = $text .'<div class="caption"><p>'.$data[$i]['content'].'</p>
                             </div></div>';
 

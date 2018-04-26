@@ -31,7 +31,8 @@
               <div>
                 <input type="submit" class="btn btn-success col-lg-3 col-md-3 col-sm-3" id="btnCreateSignin" value="Valider"/>
                 <button type="button" class=" btn btn-info col-lg-4 col-md-4 col-sm-4 offset-lg-2 offset-md-2 offset-sm-2" id="btnCreateAccount">Créer votre compte</button>
-              </div>
+              </div></br>
+              <div class="m-0 small" id="forgetLogin">Mot de passe oublié ?</div>
             </form>
 
             <!--Formulaire d'inscription-->
@@ -84,5 +85,7 @@
     </div>
   </div>
 </section>
+
+<?php include("views/login/modalForgetLogin.php");?>
 
 <script src="<?php echo URL; ?>lib/js/login.js" defer></script>

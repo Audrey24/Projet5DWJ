@@ -128,3 +128,17 @@ img {
 .close {
   margin-right: 5px;
 }
+
+.fa.fa-film {
+  margin-left: 5px;
+  color: #bababa;
+}
+
+.fa.fa-camera-retro {
+  margin-left: 5px;
+  color: #bababa;
+}
+
+#msgclique {
+  text-align: center;
+}

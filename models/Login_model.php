@@ -20,15 +20,15 @@ class Login_model extends Model
         $req = $this->db->prepare('SELECT id, pseudo, pass FROM visitors WHERE pseudo = :pseudo');
         $req->execute(array(
         'pseudo' => $pseudo));
-
         $resultat = $req->fetch();
-        if (!$resultat) {
-            $msgs["message10"] = " Erreur, mauvais identifiant ou mauvais mot de passe !";
-            $error = 1;
-        } elseif (password_verify($pass, $resultat['pass'])) {
+
+        if (password_verify($pass, $resultat['pass'])) {
             $msgs["message11"] =" Bienvenue " . $pseudo . ", bonne visite !";
             Session::init(); //sans ceci cela ne marche pas
             Session::authenticate($pseudo, $resultat['id']);
+        } else {
+            $msgs["message10"] = " Erreur, mauvais identifiant ou mauvais mot de passe !";
+            $error = 1;
         }
         //Retourne les msgs sous forme d'objets JSON pour pouvoir les traiter en JS.
         echo json_encode($msgs);
@@ -155,5 +155,61 @@ class Login_model extends Model
                   'id_user' => $user,
                   'id_event' => $id_event,
                   'role' => 2 ));
+    }
+
+    public function generateLog()
+    {
+        $mail = $_POST['mail'];
+
+        $req = $this->db->prepare('SELECT id FROM visitors WHERE mail = :mail');
+        $req->execute(array(
+        "mail" => $mail));
+        $res = $req->fetch();
+
+        $hash = md5(random_bytes(16));
+
+        $req = $this->db->prepare('INSERT INTO recovery (id_user, hash) VALUES(:id_user, :hash)');
+        $req->execute(array(
+              'id_user' => $res['id'],
+              'hash' => $hash ));
+
+        $body = "Vous avez demandé une réinitialisation de votre mot de passe.\n\n"."Veuillez suivre ce lien pour choisir votre nouveau mot de passe:\n\n". "http://projet3.projetsdwjguilloux.ovh/projet5/Login/recovery/" . $hash ."";
+        $headers = "From: noreply@yprojetsdwjguilloux.ovh\n";
+        $headers .= "Reply-To: noreply@yprojetsdwjguilloux.ovh\n" ;
+
+        mail($mail, "Demande de récupération de mot de passe", $body, $headers);
+    }
+
+    public function recovery($hash)
+    {
+        $req = $this->db->prepare('SELECT id_user FROM recovery WHERE hash = :hash');
+        $req->execute(array(
+              'hash' => $hash));
+        $res = $req->fetch();
+        return $res;
+    }
+
+    public function updateLog()
+    {
+        $req = $this->db->prepare('SELECT id_user FROM recovery WHERE hash = :hash');
+        $req->execute(array(
+            'hash' => $_POST['id']));
+        $res = $req->fetchAll();
+
+        $id = $res[0]['id_user'];
+        echo 'coucou '. $id;
+
+        $pass = $_POST['pass'];
+        echo $pass;
+        $pass = password_hash($pass, PASSWORD_DEFAULT);
+
+        $req = $this->db->prepare('UPDATE visitors SET pass = :pass WHERE id = :id');
+        $req->execute(array(
+        'id' => $id,
+        'pass' => $pass));
+
+        $req = $this->db->prepare('DELETE FROM recovery WHERE id_user = :id_user');
+        $req->execute(array(
+        'id_user' => $id));
     }
 }

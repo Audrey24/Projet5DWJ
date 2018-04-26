@@ -11,12 +11,12 @@ class Login extends Controller
     //Fonction qui rend la view associé à la classe
     public function index()
     {
-        $this->view->render('login');
+        $this->view->render('login/login');
     }
 
     public function indexEventInvitation()
     {
-        $this->view->render('login', true);
+        $this->view->render('login/login', true);
     }
 
     public function signin()
@@ -44,6 +44,29 @@ class Login extends Controller
 
     public function CGU()
     {
-        $this->view->render('mentions');
+        $this->view->render('login/mentions');
+    }
+
+    //Fonction pour récupérer son Mdp
+    public function recovery($hash)
+    {
+        $id_user = $this->model->recovery($hash);
+        //$this->view->addData($id_user);
+
+        if (!empty($id_user)) {
+            $this->view->render('login/updateLog');
+        } else {
+            header('location:'. URL . 'home');
+        }
+    }
+
+    public function generateLog()
+    {
+        $this->model->generateLog();
+    }
+
+    public function updateLog()
+    {
+        $this->model->updateLog();
     }
 }
