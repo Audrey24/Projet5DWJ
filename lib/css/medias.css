@@ -69,20 +69,20 @@ img {
 }
 
 .imgbox2 {
-  height: 260px;
+  height: 280px;
 }
 
 .imgbox3 {
   height: 350px;
 }
 .imgbox4 {
-  height: 420px;
+  height: 440px;
 }
 .imgbox5 {
   height: 460px;
 }
 .imgbox6 {
-  height: 520px;
+  height: 540px;
 }
 .tz-gallery .thumbnail:hover {
     transform: translateY(-10px) scale(1.02);
@@ -93,7 +93,6 @@ img {
 }
 
 .tz-gallery .caption{
-    padding: 26px 30px;
     text-align: center;
 }
 

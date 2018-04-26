@@ -62,7 +62,7 @@ class Medias_model extends Model
         $data = $req->fetchAll();
 
         $extImg = array("jpg","jpeg","gif","png");
-        $extVid = array("mp4");
+        $extVid = array("mp4", "mov");
 
         for ($i = 0; $i<count($data); $i++) {
             $imagefile = "eventsData/".Session::get('event')."/".$data[$i]['id']."min.png";
@@ -92,7 +92,7 @@ class Medias_model extends Model
                 $text = $text . '<button type="button" data-idimg="'.$data[$i]['id'].'" data-extension="'.$data[$i]['extension'].'" class="close deleteMod" data-dismiss="alert" aria-hidden="true">&times</button>';
             }
 
-            if ($data[$i]['extension'] !="mp4") {
+            if (in_array($data[$i]['extension'], $extImg)) {
                 $text = $text.'<i class="fa fa-camera-retro"></i><img class="center openMod" src="'.$imagefile.'">';
             } else {
                 $text = $text.'<i class="fa fa-film"></i><img class="center openMod" src="'.$imagefile.'">';
