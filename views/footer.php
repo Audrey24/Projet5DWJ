@@ -18,9 +18,7 @@
       var url = 'https://projet3.projetsdwjguilloux.ovh/projet5/';
       /*var url = 'https://projet3.projetsdwjguilloux.ovh/projet5/';*/
     }</script>
-
-
-
+    
 </body>
 
 </html>

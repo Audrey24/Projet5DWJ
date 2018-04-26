@@ -8,7 +8,7 @@
             <span class="section-heading-upper">Partager vos souvenirs</span>
           </h2>
             <p>"Souvenirs d'un jour" est un site qui vous permet de partager avec vos proches toutes vos photos et vidéos.</p>
-            <p class="mb-0">Grâce à ce site, vous allez pouvoir vous créer un album photo en ligne et le partager avec vos proches.</p></br>
+            <p class="mb-0">Grâce à ce site, vous allez pouvoir vous créer un album photo en ligne et le partager avec vos proches.</p>
             <p>"Souvenirs d'un jour" est un moyen simple et moderne de garder une trace de vos évènements importants</p>
         </div>
       </div>

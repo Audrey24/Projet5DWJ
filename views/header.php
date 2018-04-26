@@ -1,7 +1,7 @@
 <?php Session::init(); ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
   <head>
 
@@ -92,19 +92,19 @@
                   <li><a class="nav-link text-uppercase text-expanded link" href="<?php echo  URL; ?>Medias">Album</a></li>
                   <li><a class="nav-link text-uppercase text-expanded link" href="<?php echo  URL; ?>Send">Envoyer</a></li>
                   <li><a class="nav-link text-uppercase text-expanded link" href="<?php echo  URL; ?>Comments">Livre d'or</a></li>
-                  <li><a class="nav-link text-uppercase text-expanded link " href="<?php echo  URL; ?>MyEvent">Mes évènements</a></li>
+                  <li><a class="nav-link text-uppercase text-expanded link" href="<?php echo  URL; ?>MyEvent">Mes évènements</a></li>
                 <?php
+                if (!empty(Session::get('pseudo')) && (Session::get('role') == 1)) {
+                    ?>
+                      <li><a class="nav-link text-uppercase text-expanded link" href="<?php echo  URL; ?>Admin">Gérer mon évènement</a></li>
+                    <?php
+                } ?>
+              </ol>
+            </li>
+          </ol> <?php
             } ?>
 
-                  <?php
-                   if (!empty(Session::get('pseudo')) && (Session::get('role') == 1)) {
-                       ?>
-                         <li><a class="nav-link text-uppercase text-expanded link" href="<?php echo  URL; ?>Admin">Gérer mon évènement</a></li>
-                       <?php
-                   } ?>
-                </ol>
-              </li>
-            </ol>
+
 
             <?php
            if (!empty(Session::get('pseudo'))) {

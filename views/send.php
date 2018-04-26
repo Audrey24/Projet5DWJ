@@ -32,6 +32,10 @@
           </div>
         </div>
       </div>
+      <div id="loader">
+          <span class="loader loader-quart"></span>
+          <span id="text">Vos fichiers sont en cours d'envoi, veuillez patienter !</span>
+      </div>
   </section>
 
 
