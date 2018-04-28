@@ -11,7 +11,7 @@
 }
 /*Mise en forme du champ "Choisir un fichier"*/
 /*Désactive le input "file" pour pouvoir modifier sa mise en forme */
-.input-file {
+#my-file {
   display: none;
 }
 

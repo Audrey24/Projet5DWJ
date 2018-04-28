@@ -12,9 +12,6 @@
 
     <title>Souvenirs d'un jour</title>
 
-    <!-- Bootstrap core CSS-->
-    <link href="<?php echo  URL; ?>other/theme/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
     <style type="text/css" style="display: none">
 
     :root {

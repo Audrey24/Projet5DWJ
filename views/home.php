@@ -99,3 +99,7 @@
     </div>
   </div>
 </section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.5.2/lazyload.min.js"></script>
+<script>
+var myLazyLoad = new LazyLoad();
+</script>
