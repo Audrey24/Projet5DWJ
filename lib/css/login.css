@@ -10,6 +10,11 @@
   margin-top: 10rem;
 }
 
+#forgetLogin {
+  color: black;
+  font-size: 0.8em;
+}
+
 #forgetLogin:hover {
   font-weight: bold;
 }
@@ -18,4 +23,19 @@
   text-align: center;
   margin : 100px;
   padding-top : 5%;
+}
+
+#signupForm {
+  display: none;
+}
+
+#captcha {
+margin-bottom: 30px;
+margin-left: 30%;
+margin-top: 0;
+}
+
+#droitAuteur {
+  margin-top: 30px;
+  margin-bottom: 0;
 }

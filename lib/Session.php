@@ -32,6 +32,24 @@ class Session
         Session::set('id', $id);
     }
 
+    //Compte le nombre d'essai
+    public static function trySignin()
+    {
+        //On débute une session.
+        session_start();
+        //Si la clé n'est pas remplit alors elle équivaut à 1 car il s'agit du premier essai.
+        if (!isset($_SESSION['tries'])) {
+            $_SESSION['tries'] = 1;
+        } else {
+            //Sinon on incrémente d'un.
+            $_SESSION['tries'] = $_SESSION['tries'] +1;
+        }
+        //Quand on dépasse les trois essais, dernier essai qui affiche un msg ( voir Login_model)
+        if ($_SESSION['tries'] > 3) {
+            $_SESSION['tries'] = 4;
+        }
+    }
+
     //Destruction de la session.
     public static function destroy()
     {

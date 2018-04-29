@@ -27,7 +27,7 @@
               <label tabindex="0" for="newImg" class="input-img-trigger form-control">Parcourir</label>
               <input class="input-img form-control" id="newImg" name="newImg" type="file" accept="image/*">
             </div>
-            <p class="img-return"></p><br />
+            <p class="img-return" id="imgName"></p><br />
           </div><br>
 
           <div class="form-group">

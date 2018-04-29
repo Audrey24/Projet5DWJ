@@ -22,12 +22,22 @@ class Login_model extends Model
         'pseudo' => $pseudo));
         $resultat = $req->fetch();
 
-        if (password_verify($pass, $resultat['pass'])) {
+        //Appel de la fonction pour compter le nb de tentatives de connexion.
+        Session::trySignin();
+        $max = 3;
+        $val = $max - Session::get('tries') +1;
+
+        //Si erreur de pseudo ou mdp, msg d'erreur qui s'affiche + décompte de nombre d'essais restants.
+        //Sinon connexion et création d'une session(qui récupère le pseudo et le rôle).
+        if (Session::get('tries') > $max) {
+            $msgs['message13'] = "Vous avez dépassé le nombre de tentative de connexion. Veuillez réesayer daans 30 min.";
+            $error = 1;
+        } elseif (password_verify($pass, $resultat['pass'])) {
             $msgs["message11"] =" Bienvenue " . $pseudo . ", bonne visite !";
             Session::init(); //sans ceci cela ne marche pas
             Session::authenticate($pseudo, $resultat['id']);
         } else {
-            $msgs["message10"] = " Erreur, mauvais identifiant ou mauvais mot de passe !";
+            $msgs["message10"] = " Erreur, mauvais identifiant ou mauvais mot de passe ! Il vous reste " .  $val . " essais ";
             $error = 1;
         }
         //Retourne les msgs sous forme d'objets JSON pour pouvoir les traiter en JS.
@@ -41,7 +51,19 @@ class Login_model extends Model
         $error = 0;
         $msgs[] = array();
 
-        //$droit = $_POST['droitAuteur'];
+        $secret = '6Lc0LU0UAAAAAJUMPZb2bOwSonrx52xRz6Bn5sDc';
+        $sitekey = '6Lc0LU0UAAAAAOW7crKFnGiOnZAyYWa9-bJzDK2l';
+        $remoteip = $_SERVER['REMOTE_ADDR'];
+        $response = $_POST['g-recaptcha-response'];
+
+        $api_url = "https://www.google.com/recaptcha/api/siteverify?secret=". $secret. "&response=" . $response. "&remoteip=" . $remoteip;
+        $decode = json_decode(file_get_contents($api_url), true);
+
+        if ($decode['success'] == false) {
+            $msgs["message8"] = "Vous n'avez pas réussi l'épreuve Recaptcha, prenez votre flambeau et rejoignez moi !";
+            $error = 1;
+        }
+
         $non_droit = empty($_POST['droitAuteur']);
         if ($non_droit) {
             $msgs["message8"] ="Vous devez accepter les conditions";

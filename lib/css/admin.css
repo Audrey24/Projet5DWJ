@@ -25,3 +25,10 @@
 #newColor {
   height: 30px;
 }
+
+#imgName {
+  text-align: center;
+  font-size: 0.9em;
+  font-weight: bold;
+
+}

@@ -32,7 +32,7 @@
                 <input type="submit" class="btn btn-success col-lg-3 col-md-3 col-sm-3" id="btnCreateSignin" value="Valider"/>
                 <button type="button" class=" btn btn-info col-lg-4 col-md-4 col-sm-4 offset-lg-2 offset-md-2 offset-sm-2" id="btnCreateAccount">Créer votre compte</button>
               </div></br>
-              <div class="m-0 small" id="forgetLogin">Mot de passe oublié ?</div>
+              <button class="btn btn-link" id="forgetLogin">Mot de passe oublié ?</button>
             </form>
 
             <!--Formulaire d'inscription-->
@@ -75,8 +75,8 @@
               <div id="successSignup" class="col-lg-6 offset-lg-3 col-sm-6 offset-sm-3"></div></br>
 
               <div>
-                <!--<div class="g-recaptcha" data-sitekey="6Lc0LU0UAAAAAOW7crKFnGiOnZAyYWa9-bJzDK2l"></div>-->
-                <input type="submit" class="btn btn-success col-lg-6 col-md-6" id="btnSignup" value="Créer"/>
+                <div id="captcha" class="g-recaptcha col-lg-6 offset-lg-3 col-sm-4 offset-sm-3" data-sitekey="6Lc0LU0UAAAAAOW7crKFnGiOnZAyYWa9-bJzDK2l"></div>
+                <input type="submit" class="btn btn-success col-lg-6 col-sm-6" id="btnSignup" value="Créer"/>
               </div>
             </form>
           </div>
@@ -89,3 +89,4 @@
 <?php include("views/login/modalForgetLogin.php");?>
 
 <script src="<?php echo URL; ?>lib/js/login.js" defer></script>
+<script src='https://www.google.com/recaptcha/api.js' defer async></script>
