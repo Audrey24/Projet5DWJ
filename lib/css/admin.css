@@ -26,6 +26,10 @@
   height: 30px;
 }
 
+#newImg {
+  display: none;
+}
+
 #imgName {
   text-align: center;
   font-size: 0.9em;

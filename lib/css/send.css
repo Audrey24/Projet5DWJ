@@ -11,10 +11,9 @@
 }
 /*Mise en forme du champ "Choisir un fichier"*/
 /*Désactive le input "file" pour pouvoir modifier sa mise en forme */
-.input-file {
+#my-file {
   display: none;
 }
-
 /*Hover sur le champ "Parcourir" */
 .js .input-file:hover, .js .input-file-trigger:hover {
   font-weight: bold;

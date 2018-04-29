@@ -12,8 +12,6 @@
 
     <title>Souvenirs d'un jour</title>
 
-    <!-- Bootstrap core CSS-->
-    <link href="<?php echo  URL; ?>other/theme/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <style type="text/css" style="display: none">
 
@@ -50,7 +48,8 @@
 
     <!-- Custom styles for this template -->
     <link href="<?php echo  URL; ?>other/theme/css/business-casual.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://use.fontawesome.com/a83fe5fc86.js"></script>
+    <!--<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
 
   </head>
 
@@ -64,7 +63,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
       <div class="container">
-        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">MENU</a>
+        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="<?php echo  URL; ?>Home">MENU</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>

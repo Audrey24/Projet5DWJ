@@ -27,7 +27,7 @@
             </h2>
           </div>
         </div>
-          <img class="product-item-img mx-auto d-flex thumbnail img-fluid mb-3 mb-lg-0 imageExplication" src="lib/images/formCreate.png" alt="Formulaire de création d'évènement">
+          <img class="product-item-img mx-auto d-flex thumbnail img-fluid mb-3 mb-lg-0 imageExplication" src="lib/images/formCreate.jpg" alt="Formulaire de création d'évènement">
           <div class="product-item-description d-flex ml-auto">
             <div class="bg-faded p-5 rounded">
               <p class="mb-0">Souvenirs d'un jour vous permet de créer un évènement à l'aide d'un formulaire. Simple et rapide, cela vous créer une interface sur laquelle vous allez pouvoir envoyer et visualiser toutes vos photos et vidéos</p>
@@ -48,7 +48,7 @@
           </h2>
         </div>
       </div>
-        <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0 imageExplication" src="lib/images/formSend.png" alt="Formulaire d'envoi de fichiers">
+        <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0 imageExplication" src="lib/images/formSend.jpg" alt="Formulaire d'envoi de fichiers">
         <div class="product-item-description d-flex mr-auto">
           <div class="bg-faded p-5 rounded">
             <p class="mb-0">Vous allez pouvoir envoyer les souvenirs que vous souhaitez partager avec vos proches. De plus, vous y aurez accès via un album photo pour pouvoir en profitez pleinement !</p>
@@ -69,7 +69,7 @@
           </h2>
         </div>
       </div>
-        <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0 imageExplication" src="lib/images/livreDor.png" alt="Page du livre d'Or">
+        <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0 imageExplication" src="lib/images/livreDor.jpg" alt="Page du livre d'Or">
         <div class="product-item-description d-flex ml-auto">
           <div class="bg-faded p-5 rounded">
             <p class="mb-0">Vous avez également la possiblité de laisser un message dans le Livre d'Or. N'hésitez pas !  </p>
@@ -83,14 +83,14 @@
   <div class="container">
     <div class="product-item">
       <div class="product-item-title d-flex">
-        <div class="bg-faded p-5 d-flex ml-auto rounded">
+        <div class="bg-faded p-5 d-flex mr-auto rounded">
           <h2 class="section-heading mb-0">
             <span class="section-heading-upper">Votre évènement</span>
             <span class="section-heading-lower">Votre gestion</span>
           </h2>
         </div>
       </div>
-        <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0 imageExplication" src="lib/images/admin.png" alt="Page de gestion d'évènement">
+        <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0 imageExplication" src="lib/images/admin.jpg" alt="Page de gestion d'évènement">
         <div class="product-item-description d-flex mr-auto">
           <div class="bg-faded p-5 rounded">
             <p class="mb-0">Le créateur de l'évènement aura la possiblité de modifier son évènement dès qu'il le souhaite et supprimer des médias ou des commentaires qui lui semble déplacés. Vous êtes le maitre de votre évènement !</p>
@@ -99,3 +99,8 @@
     </div>
   </div>
 </section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.5.2/lazyload.min.js"></script>
+<script>
+var myLazyLoad = new LazyLoad();
+</script>

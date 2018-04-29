@@ -10,21 +10,21 @@
           <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img class="d-block w-100" src="lib/images/titrePhoto.png" alt="Choix du titre et de la photo">
+                <img class="d-block w-100" src="lib/images/titrePhoto.jpg" alt="Choix du titre et de la photo">
                 <div>
                   <p>Choisissez le titre de votre évènement et la photo qui l'accompagnera.</p>
                 </div>
               </div>
 
               <div class="carousel-item">
-                <img class="d-block w-100" src="lib/images/livreDor.png" alt="Livre d'or">
+                <img class="d-block w-100" src="lib/images/livreDor.jpg" alt="Livre d'or">
                 <div>
                   <p>Choisissez la couleur de votre livre d'or.</p>
                 </div>
               </div>
 
               <div class="carousel-item">
-                <img class="d-block w-100" src="lib/images/site.png" alt="Livre d'or">
+                <img class="d-block w-100" src="lib/images/site.jpg" alt="Livre d'or">
                 <div>
                   <p>Partagez vos photos et profitez de votre site.</p>
                 </div>
@@ -113,7 +113,7 @@
                 <div class="col-xl-9 col-lg-10 mx-auto">
                   <div id="connexionMsg">
                     <div>Vous devez avoir un compte et être connecté pour pouvoir créer un événement!</div></br>
-                      <button class="btn btn-info col-lg-3 col-sm-3"><a href="Login" class="Btnconnexion">Connexion</a></button>
+                      <a class="btn btn-info col-lg-3 col-sm-3 Btnconnexion" role="button" aria-pressed="true" href="<?php echo  URL; ?>Login" >Connexion</a>
                     </div>
                   </div>
                 </div>

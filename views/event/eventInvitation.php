@@ -76,7 +76,7 @@
           </div>
         </div>
         <div>
-          <!--<div class="g-recaptcha" data-sitekey="6Lc0LU0UAAAAAOW7crKFnGiOnZAyYWa9-bJzDK2l"></div>-->
+          <div class="g-recaptcha" data-sitekey="6Lc0LU0UAAAAAOW7crKFnGiOnZAyYWa9-bJzDK2l"></div>
           <input type="submit" class="btn btn-success col-lg-6 col-md-6" id="btnSignup" value="Créer"/>
         </div>
       </form>
