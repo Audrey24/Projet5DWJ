@@ -16,44 +16,39 @@ class Send_model extends Model
         $req->execute(array(
             'id_event' => $id_event));
         $num = $req->fetch()[0];
-        print_r($_FILES);
         print_r($_POST);
 
+        $original = array();
+
+        foreach ($_POST as $key => $Imagename) {
+            if (!preg_match("#(leg$|min$)#i", $key)) {
+                array_push($original, $key);
+                echo "on ajoute ". $key;
+            }
+        };
+
+        print_r($original);
         //Vérification des fichiers envoyés
         $i = 0;
-        foreach ($_FILES as $key => $fichier) {
-            if ($_FILES[$key]['error'] > 0) {
-                $erreur = "Erreur lors du transfert";
-            }
-            # echo($_FILES[$key]['name']);
-
-            //1. strrchr renvoie l'extension avec le point (« . »).
-            //2. substr(chaine,1) ignore le premier caractère de chaine.
-            //3. strtolower met l'extension en minuscules.
-            $extension_upload = strtolower(substr(strrchr($_FILES[$key]['name'], '.'), 1));
-            if (in_array($extension_upload, $extensions_valides)) {
-                echo "Extension correcte";
-            }
-            $image = file_get_contents($_FILES[$key]['tmp_name']);
-
+        foreach ($original as $key => $fichier) {
             $name = $num+1;
-            $nom = "eventsData/{$id_event}/{$name}.{$extension_upload}";
-            $resultat = move_uploaded_file($_FILES[$key]['tmp_name'], $nom);
 
-            $minImg = $_POST[$key.'min'];
-            $minImg = str_replace('data:image/png;base64,', '', $minImg);
-            $minImg = str_replace(' ', '+', $minImg);
-            $minImg = base64_decode($minImg);
-            $nomMin = "eventsData/{$id_event}/{$name}min.png";
-            file_put_contents($nomMin, $minImg);
+            $maxImg = $this->decode_base64($_POST[$fichier]);
+            $nomMax = "eventsData/{$id_event}/{$name}.jpeg";
+            $res = file_put_contents($nomMax, $maxImg);
 
-            if ($resultat) {
+            $minImg = $this->decode_base64($_POST[$fichier.'min']);
+            $nomMin = "eventsData/{$id_event}/{$name}min.jpeg";
+            $res2 = file_put_contents($nomMin, $minImg);
+
+            if ($res || $res2) {
                 echo "Transfert réussi";
 
                 # legende pour la photo i $_POST['legs'][$i]);
                 $user = Session::get('id');
-                $content = $_POST[$key.'leg'];
+                $content = $_POST[$fichier.'leg'];
                 $id_event = Session::get('event');
+                $extension_upload = 'jpeg';
 
                 $req = $this->db->prepare('INSERT INTO legend (id, content, id_event, id_user, extension) VALUES(:id, :content, :id_event, :id_user, :extension)');
                 $req->execute(array(
@@ -67,5 +62,12 @@ class Send_model extends Model
             }
             $i++;
         }
+    }
+
+    public function decode_base64($img)
+    {
+        $img = str_replace('data:image/jpeg;base64,', '', $img);
+        $img = str_replace(' ', '+', $img);
+        return base64_decode($img);
     }
 }

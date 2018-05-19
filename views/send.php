@@ -38,7 +38,8 @@
       </div>
   </section>
 
-
 <script type="text/javascript" src="lib/js/send.js" defer></script>
 
-<canvas id="canvas" style="display: none"></canvas>
+
+<canvas id="canvasMin" style="display:none"></canvas>
+<canvas id="canvasMax" style="display:none"></canvas>

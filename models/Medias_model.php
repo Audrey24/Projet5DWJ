@@ -65,7 +65,7 @@ class Medias_model extends Model
         $extVid = array("mp4", "mov");
 
         for ($i = 0; $i<count($data); $i++) {
-            $imagefile = "eventsData/".Session::get('event')."/".$data[$i]['id']."min.png";
+            $imagefile = "eventsData/".Session::get('event')."/".$data[$i]['id']."min.jpeg";
             $size = getimagesize($imagefile);
             $width = $size[0];
             $height = $size[1];
