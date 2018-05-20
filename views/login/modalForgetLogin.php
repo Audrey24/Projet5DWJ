@@ -1,6 +1,7 @@
-<div id="modalForgetLogin" class="modal bg-faded rounded" data-backdrop="static" data-keyboard="false">
+<div id="modalForgetLogin" class="modal bg-faded rounded">
   <form name="getLogin" id="getLogin" method="post" novalidate>
     <div>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       <h4 clas="col-lg-4 offset-lg-4">Mot de passe oublié</h4>
     </div></br>
     <div class="control-group">

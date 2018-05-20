@@ -67,7 +67,7 @@
 
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls">
-                  <input type="checkbox" name="droitAuteur" id="droitAuteur"/>  <label>J'accepte les <a href="Login/CGU">conditions d'utilisation<a> et les dispositions relatives au droit d'auteur.</label>
+                  <input type="checkbox" name="droitAuteur" id="droitAuteur"/>  <label>J'accepte les <a href="Login/CGU">conditions d'utilisation</a> et les dispositions relatives au droit d'auteur.</label>
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
@@ -85,8 +85,7 @@
     </div>
   </div>
 </section>
-
-<?php include("views/login/modalForgetLogin.php");?>
+<?php include("views/login/modalForgetLogin.php"); ?>
 
 <script src="<?php echo URL; ?>lib/js/login.js" defer></script>
 <script src='https://www.google.com/recaptcha/api.js' defer async></script>

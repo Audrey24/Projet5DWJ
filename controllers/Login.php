@@ -69,4 +69,21 @@ class Login extends Controller
     {
         $this->model->updateLog();
     }
+
+    public function getGlobalVar()
+    {
+        if (!empty(Session::get('pseudo'))) {
+            $table = array(
+              "id" => Session::get('id'),
+              "pseudo" => Session::get('pseudo'),
+              "idevent" => Session::get('event'),
+              "titleEvent" => Session::get('role'),
+              "color" => Session::get('background_color'),
+            );
+        } else {
+            $table = array("role" => "Inconnu");
+        }
+
+        echo json_encode($table);
+    }
 }

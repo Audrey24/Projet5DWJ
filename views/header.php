@@ -128,21 +128,4 @@
 
 
 
-    <?php
-      if (!empty(Session::get('pseudo'))) {
-          ?>
-    <script>
-      var id ="<?php echo Session::get('id'); ?>"
-      var pseudo ="<?php echo Session::get('pseudo'); ?>"
-      var idevent ="<?php echo Session::get('event'); ?>"
-      var titleEvent ="<?php echo Session::get('role'); ?>"
-      var color ="<?php echo Session::get('background_color'); ?>"
-    </script>
-     <?php
-      } else {
-          ?>
-      <script>
-        var role ="Inconnu";
-      </script>
-    <?php
-      } ?>
+    
