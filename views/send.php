@@ -1,3 +1,6 @@
+<?php
+if (!empty(Session::get('event'))) {
+    ?>
 <section class="page-section about-heading">
       <div class="container">
         <img id="imgSendForm" class="img-thumbnail about-heading-img mb-3 mb-lg-0" src="lib/images/appareilPhoto_mariage.jpg" alt="Appareil photo sur une table de fête">
@@ -37,6 +40,12 @@
           <span id="text">Vos fichiers sont en cours d'envoi, veuillez patienter !</span>
       </div>
   </section>
+  <?php
+} else {
+        ?>
+     <div class="page-section about-heading bg-faded rounded p-5 msgNoEvent">Vous n'avez pas sélectionné d'événement, veuillez en choisir un dans l'onglet "Evènement" puis "Mes évènements"</div>
+     <?php
+    } ?>
 
 <script type="text/javascript" src="lib/js/send.js" defer></script>
 

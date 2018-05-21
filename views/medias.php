@@ -1,5 +1,8 @@
 <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
 
+<?php
+if (!empty(Session::get('event'))) {
+    ?>
 <section id="sectionMedias" class="page-section about-heading">
     <img id="imgEvent" class="img-thumbnail about-heading-img mb-3 mb-lg-0" src="eventsData/<?php echo Session::get('event'); ?>/backgroundImg.jpg" alt="BackgroundImg">
       <div  class="about-heading-content">
@@ -18,6 +21,13 @@
       <div class="grid tz-gallery"></div>
 
 </section>
+
+<?php
+} else {
+        ?>
+   <div class="page-section about-heading bg-faded rounded p-5 msgNoEvent">Vous n'avez pas sélectionné d'événement, veuillez en choisir un dans l'onglet "Evènement" puis "Mes évènements"</div>
+   <?php
+    } ?>
 
 <?php include("views/modalImage.php");?>
 <?php include("views/event/modalDelete.php");?>
