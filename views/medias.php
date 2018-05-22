@@ -17,6 +17,9 @@ if (!empty(Session::get('event'))) {
       <div class="col-lg-7 col-md-7 mx-auto bg-faded rounded p-2">
         <p id="msgclique" class="m-0 small">N'hésitez pas à cliquez sur les vignettes.</p>
       </div>
+      <div class="col-lg-7 col-md-7 mx-auto bg-faded rounded p-2">
+        <p id="status-bugs" class="m-0 small">Certaines vidéos ne sont pas encore tout à fait prises en charge par tous les navigateurs, nous y travaillons !</p>
+      </div>
 
       <div class="grid tz-gallery"></div>
 
