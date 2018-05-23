@@ -13,7 +13,7 @@
     <title>Souvenirs d'un jour</title>
 
 
-    <style type="text/css" style="display: none">
+    <style id="globalColor">
 
     :root {
       <?php if (!empty(Session::get('pseudo')) && (!empty(Session::get('event')))) {

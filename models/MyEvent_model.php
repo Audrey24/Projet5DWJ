@@ -50,5 +50,6 @@ class MyEvent_model extends Model
         }
 
         rmdir("eventsData/{$id}/");
+        session_destroy();
     }
 }

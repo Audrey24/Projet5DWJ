@@ -72,7 +72,7 @@ class Login_model extends Model
         $pseudo = $_POST['signupPseudo'];
         //Convertit les caractères spéciaux en entités HTML.
         $pseudo = htmlspecialchars($pseudo);
-        if (!isset($pseudo) || !preg_match("#^[a-z0-9ÀÁÂÃÄÅàáâãäåÒÓÔÕÖØòóôõöøÈÉÊËèéêëÇçÌÍÎÏìíîïÙÚÛÜùúûüÿÑñ@_&]{3,16}+$#i", $pseudo)) {
+        if (!isset($pseudo) || !preg_match("#^[a-zA-Z0-9ÀÁÂÃÄÅàáâãäåÒÓÔÕÖØòóôõöøÈÉÊËèéêëÇçÌÍÎÏìíîïÙÚÛÜùúûüÿÑñ@_&]{3,16}+$#", $pseudo)) {
             $msgs["message3"] ="Le pseudo n'est pas valide : il doit contenir entre 3 et 16 caractères et se composer de chiffres, de lettres, de lettres accentués ou de ces signes : @  _ &";
             $error = 1;
         }
@@ -90,7 +90,7 @@ class Login_model extends Model
         $passbrut = $_POST['signupPass'];
         //Convertit les caractères spéciaux en entités HTML.
         $passbrut = htmlspecialchars($passbrut);
-        if (!isset($passbrut) || !preg_match("#^[a-z0-9ÀÁÂÃÄÅàáâãäåÒÓÔÕÖØòóôõöøÈÉÊËèéêëÇçÌÍÎÏìíîïÙÚÛÜùúûüÿÑñ@_&/(){}]{3,16}+$#", $passbrut)) {
+        if (!isset($passbrut) || !preg_match("#^[a-zA-Z0-9ÀÁÂÃÄÅàáâãäåÒÓÔÕÖØòóôõöøÈÉÊËèéêëÇçÌÍÎÏìíîïÙÚÛÜùúûüÿÑñ@_&/(){}]{3,16}+$#", $passbrut)) {
             $msgs["message5"] = "Le mot de passe n'est pas valide : il doit contenir entre 3 et 16 caractères et se composer de chiffres, de lettres ou de ces signes : _ & / () {} )";
             $error = 1;
         }

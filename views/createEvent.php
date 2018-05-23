@@ -44,6 +44,7 @@
       </a>
     </div>
   </div>
+</div>
 </section>
 
 <?php if (!empty(Session::get('pseudo'))) {
@@ -81,11 +82,12 @@
 
                       <div class="control-group">
                         <div class="control-group">
-                          <label>Choisir une image (formats JPG ou PNG)</label><br />
-                          <label tabindex="0" for="myImg"  class="input-img-trigger form-control">Parcourir</label>
-                          <input class="input-img form-control" name="myImg" id="myImg"  type="file" accept="image/*">
+                          <label>Choisir une image (formats JPG ou PNG)</label><br>
+                          <label tabindex="0" for="myImg" class="input-img-trigger form-control">Parcourir</label>
+                          <input class="input-img form-control" name="myImg" id="myImg" type="file" accept="image/*">
+                          <label>Choisir un fichier (formats JPG ou PNG)</label><br>
                         </div>
-                        <p class="img-return"></p><br />
+                        <p class="img-return"></p><br>
                       </div><br>
 
                       <div id="messageCreateEvent" class="col-lg-10 offset-lg-1 col-md-10 offset-md-1"></div>
@@ -112,7 +114,7 @@
               <div class="row">
                 <div class="col-xl-9 col-lg-10 mx-auto">
                   <div id="connexionMsg">
-                    <div>Vous devez avoir un compte et être connecté pour pouvoir créer un événement!</div></br>
+                    <div>Vous devez avoir un compte et être connecté pour pouvoir créer un événement!</div><br>
                       <a class="btn btn-info col-lg-3 col-sm-3 Btnconnexion" role="button" aria-pressed="true" href="<?php echo  URL; ?>Login" >Connexion</a>
                     </div>
                   </div>

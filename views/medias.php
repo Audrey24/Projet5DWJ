@@ -13,7 +13,7 @@ if (!empty(Session::get('event'))) {
             </h2>
           </div>
         </div>
-      </div></br>
+      </div><br>
       <div class="col-lg-7 col-md-7 mx-auto bg-faded rounded p-2">
         <p id="msgclique" class="m-0 small">N'hésitez pas à cliquez sur les vignettes.</p>
       </div>

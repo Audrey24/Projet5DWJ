@@ -48,6 +48,3 @@ if (!empty(Session::get('event'))) {
     } ?>
 
 <script type="text/javascript" src="lib/js/send.js" defer></script>
-
-<canvas id="canvasMin" style="display:none"></canvas>
-<canvas id="canvasMax" style="display:none"></canvas>

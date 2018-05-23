@@ -28,6 +28,7 @@ class CreateEvent_model extends Model
                   'background_color' => $color));
 
         $id_event = $this->db->lastInsertId();
+        echo($id_event);
         $req = $this->db->prepare('INSERT INTO attendance (id_user, id_event, role) VALUES(:id_user, :id_event, :role)');
         $req->execute(array(
                     'id_user' => $user,

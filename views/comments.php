@@ -46,11 +46,11 @@ if (!empty(Session::get('event'))) {
                       <span class="section-heading-upper">Commenter</span>
                     </h2>
                     <textarea rows="7" class="col-lg-12" id="comments" name="comments" placeholder="Votre commentaire" required data-validation-required-message="Veuillez écrire un commentaire."></textarea>
-                  </div></br>
+                  </div><br>
                   <button type="submit" class="btn btn-success" id="sendComment">Commenter</button>
                   <div id="commentMessage"></div>
                 </form>
-              </div></br>
+              </div><br>
             </div>
           </div>
         </div>
@@ -67,5 +67,3 @@ if (!empty(Session::get('event'))) {
 
 <script type="text/javascript" src="lib/js/comments.js" defer></script>
 <?php include("views/event/modalDelete.php");?>
-  </tbody>
-</table>
