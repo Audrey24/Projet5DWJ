@@ -9,7 +9,7 @@ $recipient = $_POST['recipient'];
 $email_address = strip_tags(htmlspecialchars($_POST['mail']));
 
 // Create the email and send the message
-$to = $recipient; // Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
+$to = $recipient;
 $email_subject = "Invitation Souvenirs d'un jour";
 $email_body = "Vous avez reçu une invitation à vous rendre sur le site de Souvenirs d'un jour.
 .\n\n"."Voici le lien:\n\n http://projet3.projetsdwjguilloux.ovh/projet5/";

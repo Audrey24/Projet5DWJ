@@ -12,14 +12,15 @@ class CreateEvent_model extends Model
         Session::init();
         $user = Session::get('id');
 
+        print_r($_POST);
         //On récupère le mail associé à l'id de l'user connecté pour envoyer le mail de confirmation.
         $req = $this->db->prepare('SELECT mail FROM visitors WHERE id = :id');
         $req->execute(array('id' => $user));
         $res = $req->fetch();
 
         //Traitement des données.
-        $title = $_POST['createEventTitle'];
-        $color = $_POST['createEventColor'];
+        $title = htmlspecialchars($_POST['title']);
+        $color = htmlspecialchars($_POST['color']);
 
         //Insert en BDD les données du formulaire
         $req = $this->db->prepare('INSERT INTO event (title, background_color) VALUES(:title, :background_color)');
@@ -48,24 +49,11 @@ class CreateEvent_model extends Model
         $headers .= "Reply-To: noreply@yprojetsdwjguilloux.ovh\n";
         mail($to, $email_subject, $email_body, $headers);
 
-        //Vérification des fichiers envoyés
-        if ($_FILES['myImg']['error'] > 0) {
-            $erreur = "Erreur lors du transfert";
-        }
-
-        $extensions_valides = array( 'jpg' , 'jpeg' , 'gif' , 'png');
-        //1. strrchr renvoie l'extension avec le point (« . »).
-        //2. substr(chaine,1) ignore le premier caractère de chaine.
-        //3. strtolower met l'extension en minuscules.
-        $extension_upload = strtolower(substr(strrchr($_FILES['myImg']['name'], '.'), 1));
-        if (in_array($extension_upload, $extensions_valides)) {
-            echo "Extension correcte";
-        }
-        $image = file_get_contents($_FILES['myImg']['tmp_name']);
+        $backImg = Utils::decode_base64($_POST["backgroundImg"]);
 
         mkdir("eventsData/{$id_event}/", 0777, true);
-        $nom = "eventsData/{$id_event}/backgroundImg.{$extension_upload}";
-        $resultat = move_uploaded_file($_FILES['myImg']['tmp_name'], $nom);
+        $nom = "eventsData/{$id_event}/backgroundImg.jpg";
+        $resultat = file_put_contents($nom, $backImg);
         if ($resultat) {
             echo "Transfert réussi";
         }

@@ -10,64 +10,75 @@ class Send_model extends Model
     public function send()
     {
         $id_event = Session::get('event');
-        $extensions_valides = array( 'jpg' , 'jpeg' , 'gif' , 'png', 'mp4');
+        $user = Session::get('id');
+        $extensions_valides = array('mp4', 'mov');
 
-        $req = $this->db->prepare('SELECT MAX(id) FROM legend WHERE id_event = :id_event');
-        $req->execute(array(
-            'id_event' => $id_event));
-        $num = $req->fetch()[0];
+        $num = $this->getMaxMed($id_event);
+        $num++;
+
         print_r($_POST);
-
-        $original = array();
-
+        print_r($_FILES);
+        # traitement images
         foreach ($_POST as $key => $Imagename) {
             if (!preg_match("#(leg$|min$)#i", $key)) {
-                array_push($original, $key);
-                echo "on ajoute ". $key;
+                $maxImg = Utils::decode_base64($_POST[$key]);
+                $nomMax = "eventsData/{$id_event}/{$num}.jpeg";
+                $resultat = file_put_contents($nomMax, $maxImg);
+
+                $this->saveMinLeg($_POST[$key.'min'], $id_event, $num, $resultat, $_POST[$key.'leg'], "jpeg", $user);
+                $num++;
             }
         };
 
-        print_r($original);
-        //Vérification des fichiers envoyés
-        $i = 0;
-        foreach ($original as $key => $fichier) {
-            $name = $num+1;
+        # traitement videos
+        foreach ($_FILES as $key => $fichier) {
+            $extension_upload = strtolower(substr(strrchr($_FILES[$key]['name'], '.'), 1));
+            if ($_FILES[$key]['error'] == 0 || in_array($extension_upload, $extensions_valides)) {
+                $video = file_get_contents($_FILES[$key]['tmp_name']);
+                $nom = "eventsData/{$id_event}/{$num}.{$extension_upload}";
+                $resultat = move_uploaded_file($_FILES[$key]['tmp_name'], $nom);
 
-            $maxImg = $this->decode_base64($_POST[$fichier]);
-            $nomMax = "eventsData/{$id_event}/{$name}.jpeg";
-            $res = file_put_contents($nomMax, $maxImg);
-
-            $minImg = $this->decode_base64($_POST[$fichier.'min']);
-            $nomMin = "eventsData/{$id_event}/{$name}min.jpeg";
-            $res2 = file_put_contents($nomMin, $minImg);
-
-            if ($res || $res2) {
-                echo "Transfert réussi";
-
-                # legende pour la photo i $_POST['legs'][$i]);
-                $user = Session::get('id');
-                $content = $_POST[$fichier.'leg'];
-                $id_event = Session::get('event');
-                $extension_upload = 'jpeg';
-
-                $req = $this->db->prepare('INSERT INTO legend (id, content, id_event, id_user, extension) VALUES(:id, :content, :id_event, :id_user, :extension)');
-                $req->execute(array(
-                    'id' => $name,
-                    'content' => $content,
-                    'id_event' => $id_event,
-                    'id_user' => $user,
-                    'extension' => $extension_upload));
-
-                $num = $name;
+                $this->saveMinLeg($_POST[$key.'min'], $id_event, $num, $resultat, $_POST[$key.'leg'], $extension_upload, $user);
+                $num++;
+            } else {
+                echo "Extension video incorrecte";
             }
-            $i++;
         }
     }
 
-    public function decode_base64($img)
+    /*private function decode_base64($img)
     {
         $img = str_replace('data:image/jpeg;base64,', '', $img);
         $img = str_replace(' ', '+', $img);
         return base64_decode($img);
+    }*/
+
+    private function getMaxMed($event)
+    {
+        $req = $this->db->prepare('SELECT MAX(id) FROM legend WHERE id_event = :id_event');
+        $req->execute(array(
+          'id_event' => $event));
+        return $req->fetch()[0];
+    }
+
+    private function saveMinLeg($mini, $id_event, $idMedia, $boolOriginalSave, $leg, $extension_upload, $user)
+    {
+        $minImg = Utils::decode_base64($mini);
+        $nomMin = "eventsData/{$id_event}/{$idMedia}min.jpeg";
+        $res2 = file_put_contents($nomMin, $minImg);
+
+        if ($boolOriginalSave || $res2) {
+            echo "Transfert réussi";
+
+            $content = htmlspecialchars($leg);
+
+            $req = $this->db->prepare('INSERT INTO legend (id, content, id_event, id_user, extension) VALUES(:id, :content, :id_event, :id_user, :extension)');
+            $req->execute(array(
+              'id' => $idMedia,
+              'content' => $content,
+              'id_event' => $id_event,
+              'id_user' => $user,
+              'extension' => $extension_upload));
+        }
     }
 }

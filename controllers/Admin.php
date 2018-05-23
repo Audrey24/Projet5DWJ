@@ -31,7 +31,6 @@ class Admin extends Controller
 
     public function sendInv()
     {
-        echo('testouillr');
         require("lib/mail/modalInvitation.php");
     }
 }

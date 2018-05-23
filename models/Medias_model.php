@@ -31,7 +31,7 @@ class Medias_model extends Model
         $extension = $res[0];
 
         $filesdelete = "eventsData/{$id}/{$idImg}.{$extension}";
-        $mindelete = "eventsData/{$id}/{$idImg}min.png";
+        $mindelete = "eventsData/{$id}/{$idImg}min.jpeg";
         unlink($filesdelete);
         unlink($mindelete);
 

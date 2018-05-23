@@ -1,0 +1,30 @@
+#titleMyEvent{
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+#btnChoiceEvent {
+  margin-top: 20px;
+}
+
+.idEvent {
+  display: none;
+}
+
+.titleEvent {
+  padding: 0;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+#messageEvent {
+  margin-top: 20px;
+}
+
+.fa.fa-times:hover {
+  color: red;
+}
+
+#messageNoEvent {
+  text-align: center;
+}

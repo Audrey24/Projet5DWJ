@@ -1,6 +1,6 @@
 <?php
 
-$idEvent = Session::get('id');
+$idEvent = Session::get('event');
 
 if (empty($_POST['mail']) || !filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) {
     echo "Pas d'arguments fournis !";
