@@ -35,21 +35,28 @@ class MyEvent_model extends Model
 
     public function delete()
     {
+        $user = Session::get('id');
         $id = $_POST['id'];
-        echo($id);
 
-        $req = $this->db->prepare('DELETE FROM event WHERE id = :id');
+        $req = $this->db->prepare('SELECT role FROM attendance WHERE id_event = :id AND id_user = :id_user');
         $req->execute(array(
+             'id' => $id,
+             'id_user' => $user));
+
+        $res = $req->fetch();
+
+        if ($res['role'] == 1) {
+            $req = $this->db->prepare('DELETE FROM event WHERE id = :id');
+            $req->execute(array(
              'id' => $id));
 
+            $dir = "eventsData/{$id}";
+            $filesdelete = scandir($dir);
+            for ($i=2; $i<count($filesdelete); $i++) {
+                unlink("eventsData/".$id."/".$filesdelete[$i]);
+            }
 
-        $dir = "eventsData/{$id}";
-        $filesdelete = scandir($dir);
-        for ($i=2; $i<count($filesdelete); $i++) {
-            unlink("eventsData/".$id."/".$filesdelete[$i]);
+            rmdir("eventsData/{$id}/");
         }
-
-        rmdir("eventsData/{$id}/");
-        session_destroy();
     }
 }
