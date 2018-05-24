@@ -15,8 +15,6 @@ class MyEvent extends Controller
     //Fonction qui rend la view associé à la classe
     public function index()
     {
-        /*$res = $this->model->events();
-        $this->view->addData($res);*/
         $this->view->addData($this->model->events());
         $this->view->render('event/myEvent');
     }

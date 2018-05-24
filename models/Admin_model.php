@@ -71,7 +71,7 @@ class Admin_model extends Model
     {
         $id_event = Session::get('event');
 
-        $req = $this->db->prepare('SELECT attendance.id_user, attendance.id_event, visitors.pseudo
+        $req = $this->db->prepare('SELECT attendance.id_user, attendance.id_event, visitors.pseudo, attendance.role
                                  FROM attendance INNER JOIN visitors
                                  ON attendance.id_user = visitors.id
                                  WHERE id_event= :id_event');
