@@ -48,6 +48,8 @@
               for ($i=0; $i<count($data); $i++) {
                   if ($data[$i]["role"] == 2) {
                       $text = '<div><p><i class="fa fa-times" data-toggle="modal" data-target="#modalDelete" data-id="'.($data[$i]["id_user"]).'"></i>';
+                  } else {
+                      $text = '<div><p><i class="fa fa-crown"></i>';
                   }
                   $text = $text . '<span id="pseudo'.($data[$i]["id_user"]).'"><strong>'.$data[$i]['pseudo'].'</strong></span>';
                   $text = $text . '</p></div>';

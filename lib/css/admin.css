@@ -22,6 +22,11 @@
   right:50px;
 }
 
+.fa.fa-crown {
+  position: absolute;
+  right:50px;
+}
+
 #newColor {
   height: 30px;
 }

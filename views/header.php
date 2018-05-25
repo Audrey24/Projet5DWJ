@@ -48,7 +48,7 @@
 
     <!-- Custom styles for this template -->
     <link href="<?php echo  URL; ?>other/theme/css/business-casual.css" rel="stylesheet">
-    <script src="https://use.fontawesome.com/a83fe5fc86.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <!--<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
 
   </head>
