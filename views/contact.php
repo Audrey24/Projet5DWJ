@@ -51,8 +51,8 @@
               <p class="mb-0">
                 <em>Réseaux</em>
               <br>
-                <i class="fa fa-linkedin fa-lg"></i>
-                <i class="fa fa-facebook-square fa-lg"></i>
+              <i class="fab fa-linkedin fa-lg"></i>
+              <i class="fab fa-facebook-square fa-lg"></i>
               </p>
 
             </div>
